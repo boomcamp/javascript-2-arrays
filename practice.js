@@ -325,11 +325,9 @@ var tom = {
   After that console.log the length of the Array and make sure that it's equal to 4.
 */
 
-employees.push(joe);
-employees.push(jim);
-employees.push(ryan);
-employees.push(tom);
-console.log(employees.length);
+employees.push(joe, jim, ryan, tom);
+
+console.log(employees);
 
 
 
@@ -338,7 +336,11 @@ console.log(employees.length);
   Loop through your employees until you find jim, then remove him from the array.
 */
 
-//Code Here
+for (i in employees){
+  if (employees[i].name === 'Jim')
+    employees.splice(i, 1) 
+}
+console.log(employees);
 
 
 
@@ -350,7 +352,7 @@ console.log(employees.length);
   Create an empty array called users.
 */
 
-//Code Here
+var users = []
 
 
 
@@ -369,7 +371,21 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+  name: 'Jericho Aldemo',
+  email: 'jericho@boom.camp',
+  password: 'jericho123',
+  username: 'echo123'
+};
+
+var user3 = {
+  name: 'Jhoanne Fernandez',
+  email: 'jhoanne@boom.camp',
+  password: 'jhoanne123',
+  username: 'portia123'
+};
+
+users.push(user1, user2, user3)
 
 
 
@@ -383,7 +399,11 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
+for (i in users){
+  if (users[i].email === 'mark@boom.camp')
+    users.splice(i, 1) 
+}
+console.log(users);
 
 
 
