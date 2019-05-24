@@ -190,7 +190,35 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, removes){
+  if(!removes){
+    return [];
+  }
+  for(let i=0; i<myGroceryList.length; i++){
+    if(myGroceryList[i]==removes){
+      myGroceryList.splice(i, 1);
+    }
+  }
+  return myGroceryList;
+}
 
+//console.log(removeItem(myGroceryList, 'chips'));
+
+function addItem(myGroceryList, adds){
+  if(!adds){
+    return [];
+  }
+  var c = 0;
+  for(let i=0; i<myGroceryList.length; i++){
+    if(myGroceryList[i]===adds){
+      c++;
+    }
+  }
+  if(c==0){
+    myGroceryList.push(adds);
+  }
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
