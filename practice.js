@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[arr.length-1];
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,6 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
+function looper(family){
+  for(var i=0;i<family.length;i++){
+    alert(family[i]);
+  }
+}
 
 
 
@@ -64,7 +73,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
-
+function reversedLooper(letters){
+  for(var i=letters.length-1; i>=0;i--){
+    alert(letters[i]);
+  }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -78,6 +91,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+
+function evenFinder(nums){
+  var arr = [];
+
+  for(i=0;i<nums.length;i++){
+    if(nums[i] % 2 == 0){
+      arr.push(nums[i]);
+    }
+  }
+  return arr;
+}
 
 
 
@@ -94,7 +118,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  var arr = [[],[]];
+  for(var i=0;i<numbersArray.length;i++){
+    if(numbersArray[i] % 2 ==0 ){
+      arr[0].push(numbersArray[i]);
+    }else{
+      arr[1].push(numbersArray[i]);
+    }
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -117,7 +151,50 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+// function finder(arr){
+//   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
+//   for(var i=0; i<numbers.length;i++){
+//     randomNumber = getRandomArbitrary();
+//     var checker = true;
+//     for(var j=0; j<numbers.length;j++){
+//       if(numbers[j] === randomNumber){
+//         checker = true;
+//       }
+//       return checker;
+//     }
+   
+//   }
+
+// }
+
+
+// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+// function finder(numbers){
+
+//  let randomNumber = getRandomArbitrary();
+//  console.log(randomNumber)
+//  var found = numbers.find(function(element) {
+//   return element === randomNumber;
+// });
+
+// if(found == undefined){
+//  return false;
+// }else{
+//  return true;
+// }
+// }
+
+function finder(arr) {
+  var randomNumber = getRandomArbitrary();
+  var checker = true;
+
+  for (val of arr) {
+    checker = ((val == randomNumber) ? true : false);
+  }
+
+  return checker;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -145,8 +222,32 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, Item){
+  var arr = [];
+
+    if(myGroceryList && Item){
+     myGroceryList.splice(myGroceryList.indexOf(Item),1);
+     return myGroceryList;
+    }else{
+      return arr;
+    }
+ 
+}
 
 
+function addItem(myGroceryList, addItem){
+  var arr = [];
+    if(myGroceryList && addItem){
+     myGroceryList.push(addItem);
+     return myGroceryList;
+    }else{
+       return arr;
+    }
+  
+  
+}
+removeItem(myGroceryList, 'chips');
+addItem(myGroceryList, 'Jerky');
 
 ////////// PROBLEM 9 //////////
 
@@ -155,6 +256,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker(){
+  var arr = [];
+  for(var i = 1; i <= 215; i++){
+    arr.push(i);
+  }
+  return arr;
+}
 
 
 
@@ -171,6 +279,21 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(numbers){
+  arr = [];
+
+
+  for(val of numbers){
+    if(!isNaN(val)){
+    var temp = Number(val);
+    }else{
+      var temp = val;
+    }
+    arr.push(temp + 10);
+  }
+  return arr;
+}
+// addTen(numbers);
 
 
 
@@ -196,6 +319,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else{
+    return arr2;
+  }
+}
 
 
 
@@ -208,6 +338,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  arr = [];
+  for(val1 of arr1){
+    for(val2 of arr2){
+      if(val1 == val2){
+        arr.push(val1);
+      }
+    }
+  }
+  return arr;
+}
 
 
 
@@ -249,6 +390,9 @@ var tom = {
 
 //Code Here
 
+employees = [joe,jim,ryan,tom];
+console.log(employees.length);
+
 
 
 /*
@@ -257,6 +401,13 @@ var tom = {
 */
 
 //Code Here
+for(val of employees){
+  if(val.name === 'Jim'){
+    employees.splice(employees.indexOf(val),1);
+  }
+  
+}
+console.log(employees.length);
 
 
 
@@ -269,6 +420,7 @@ var tom = {
 */
 
 //Code Here
+var users = [];
 
 
 
@@ -288,6 +440,25 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users = [
+  [user1],
+  [ user2={
+    name: 'Mark Mouser1',
+    email: 'mark@boom.camp1',
+    password: 'hunter21',
+    username: 'ihazcode1'
+  }
+    
+  ],
+  [ user3 = {
+    name: 'Mark Mouser2',
+    email: 'mark@boom.camp2',
+    password: 'hunter22',
+    username: 'ihazcode2'
+    }
+    
+  ]
+];
 
 
 
@@ -303,7 +474,11 @@ var user1 = {
 
 //Code Here
 
-
+for(val of users){
+  if(val.email === 'mark@boom.camp'){
+    users.splice(users.indexOf(users),1);
+   }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
