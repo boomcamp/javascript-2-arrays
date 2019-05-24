@@ -294,7 +294,7 @@ function both(arr1,arr2){
   for(a of arr1){
     for(b of arr2){
       if(a == b){
-        newArr.push(a);
+       newArr.push(a);
       }
     }
   }
@@ -339,7 +339,12 @@ var tom = {
 */
 
 //Code Here
-
+employees = [
+  joe,
+  jim,
+  ryan,
+  tom
+]
 
 
 /*
@@ -348,8 +353,9 @@ var tom = {
 */
 
 //Code Here
-
-
+let names = employees.map(emp => emp.name);
+var jim_index = names.indexOf('Jim');
+employees.splice(jim_index,1);
 
 ////////// PROBLEM 13 //////////
 
@@ -361,7 +367,7 @@ var tom = {
 
 //Code Here
 
-
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -379,7 +385,19 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+var user2 = {
+    name: 'Marka Mouser',
+    email: 'mark@booms.camp',
+    password: 'hunter2',
+    username: 'ihazcode'
+};
+var user3 = {
+  name: 'Marks Mouser',
+  email: 'mark@booma.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+users = [user1, user2, user3];
 
 
 /*
@@ -393,6 +411,10 @@ var user1 = {
 */
 
 //Code Here
+var delete_found = users.map(u => u.email);
+var mark_index = delete_found.indexOf('mark@boom.camp');
+users.splice(mark_index,1);
+
 
 
 
