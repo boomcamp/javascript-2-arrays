@@ -96,8 +96,6 @@ function evenFinder(nums) {
   return temp;
 }
 
-evenFinder(nums);
-
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -106,11 +104,26 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 /*
   Write a function called divider that is given one argument, numbersArray.
-  Have divider return an array with the first item in the array being the evens array (all the even values from numbersArray)
+  Have divider return an array with the first item in the array being the evens array 
+  (all the even values from numbersArray)
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
 //Code Here
+function divider(numbersArray) {
+  var arr = [];
+  var even = [];
+  var odd = [];
+  for (let nums of numbersArray) {
+    if(nums % 2 != 0) {
+      odd.push(nums);
+    } else if(nums % 2 === 0) {
+      even.push(nums);
+    }
+  }
+  arr.push(even,odd);
+  return arr;
+}
 
 
 
