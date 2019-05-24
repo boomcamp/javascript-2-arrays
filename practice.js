@@ -288,7 +288,6 @@ function longer(arr1, arr2) {
  }
 }
 
-
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -298,6 +297,28 @@ function longer(arr1, arr2) {
 */
 
 //Code Here
+function both(arr1, arr2) {
+  var newArray = [];
+
+  if (arr1.length > arr2.length) {
+    for (i = 0; i != arr1.length; i++) {
+      for(y = 0; y != arr2.length; y++) {
+        if (arr1[i] == arr2[y]) {
+          newArray.push(arr2[y]);
+        }
+      }
+    }
+  } else {
+    for (i = 0; i != arr2.length; i++) {
+      for(y = 0; y != arr1.length; y++) {
+        if (arr1[i] == arr2[y]) {
+          newArray.push(arr2[y]);
+        }
+      }
+    }
+  }
+  return newArray;
+}
 
 
 
