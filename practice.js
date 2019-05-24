@@ -124,7 +124,7 @@ function divider(numbersArray){
       oddNum = oddNum.concat(i);
     }
   }
-  return evenNum.concat(oddNum);
+  return [evenNum,oddNum];
 }
 
 
@@ -147,7 +147,18 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  var randomNumber = getRandomArbitrary();
+  var flag = true;
+  for (i of arr){
+    if(i == randomNumber){
+      flag = true;
+    }else{ 
+      flag = false;
+    }
+  }
+  return flag;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -176,6 +187,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+
 
 
 
