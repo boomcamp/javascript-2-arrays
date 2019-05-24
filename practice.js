@@ -52,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family){
+  for(str of family){
+    alert(str);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
