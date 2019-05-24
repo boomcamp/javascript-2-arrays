@@ -242,10 +242,20 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+addTen(numbers);
+
 function addTen(numbers) {
+  var newArray = [];
+
   for (val of numbers) {
-    console.log(typeof val);
+    if ((typeof val) == 'string') {
+      var integer = parseInt(val, 10);
+      newArray.push(integer+10);
+    } else {
+      newArray.push(val+10);
+    }
   }
+  return newArray;
 }
 
 ////////// PROBLEM 11 //////////
@@ -270,7 +280,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+ if (arr1.length > arr2.length) {
+   return arr1;
+ } else {
+   return arr2;
+ }
+}
 
 
 /*
