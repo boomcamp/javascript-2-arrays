@@ -51,11 +51,10 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 //Code Here
 function looper(fam) {
-  for(let fambam in fam) {
-    console.log(fambam);
+  for(let fambam of fam) {
+    alert(fambam);
   }
 }
-
 
 ////////// PROBLEM 4 //////////
 
@@ -69,8 +68,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+function reversedLooper(letahs) {
+  for(let i = letahs.length-1; i >= 0; i--) {
+    alert(letahs[i]);
+  }
+}
 
-
+reversedLooper(letters);
 
 ////////// PROBLEM 5 //////////
 
@@ -84,7 +88,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums) {
+  let temp = [];
+  for (let numbah of nums) {
+    if(i % 2 === 0) {
+      temp.push(numbah);
+    }
+  }
+}
 
 
 ////////// PROBLEM 6 //////////
