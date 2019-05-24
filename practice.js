@@ -316,7 +316,7 @@ console.log(employees.length);
 */
 
 //Code Here
-
+var users =[];
 
 
 /*
@@ -335,8 +335,20 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users = [ [user1], 
+[user2 = {
+   name: 'John Paulo Barbin',
+   email: 'john.barbin@boom.camp',
+   password: 'john123',
+   username: 'johnbarbin'}],
+[user2 = {
+   name: 'John Paulo',
+   email: 'john.paulo@boom.camp',
+   password: 'paulo123',
+   username: 'johnpaulo'} 
+]
 
-
+]
 
 /*
   Now you have a very common data structure.
@@ -349,7 +361,11 @@ var user1 = {
 */
 
 //Code Here
-
+for(value of users){
+  if(value.email === 'mark@boom.camp'){
+    users.splice(users.indexOf(users), 1);
+   }
+}
 
 
 /*
