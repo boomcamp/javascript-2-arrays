@@ -346,7 +346,10 @@ var tom = {
 */
 
 //Code Here
-
+employees.push(jim);
+employees.push(joe);
+employees.push(ryan);
+employees.push(tom);
 
 
 /*
@@ -355,8 +358,10 @@ var tom = {
 */
 
 //Code Here
-
-
+let emp = employees.map(r => r.name);
+console.log(emp.indexOf('Jim'));
+employees.splice(emp,1);
+console.log(employees);
 
 ////////// PROBLEM 13 //////////
 
@@ -386,6 +391,26 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+let user2 = {
+  name: 'Samuel Jackson',
+  email: 'sj@boom.camp',
+  password: 'motherfather',
+  username: 'ezekiel2517'
+};
+
+let user3 = {
+  name: 'Al Pacino',
+  email: 'ap@boom.camp',
+  password: 'sayhellotomylittlefriend',
+  username: 'corleone'
+};
+
+let users = [user1,user2,user3];
+
+let names = users.map(r => r.name);
+names.indexOf('Mark Mouser');
+users.splice(names,1);
+
 
 
 
