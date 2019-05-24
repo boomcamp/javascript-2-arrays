@@ -211,11 +211,6 @@ function addItem(myGroceryList, add){
   }else {
     myGroceryList.push(add);
   }
-  // for(let x = 0; x < myGroceryList.length; x++){
-  //   if (myGroceryList[x] !== null || myGroceryList[x] !== undefined || myGroceryList[x] !== 0 || myGroceryList[x] !== NaN){
-  //     myGroceryList.push(add);
-  //   }
-  // }
   return myGroceryList;
 }
 
@@ -250,23 +245,6 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 function addTen(numbers){
-  // var converted =[];
-  // var integer = [];
-  // for (let i = 0; i < numbers.length; i++){
-  //   if (typeof numbers[i] === 'string'){
-  //     converted.push(parseInt(numbers[i]));
-  //   }
-  //   if (typeof numbers[i] === 'number'){
-  //     integer.push(numbers[i]);
-  //   }
-
-  // }
-
-  // for (let j=0; j < converted.length; j++){
-  //   integer.push(converted[j]);
-  // }
-
-  
   var converted =[];
   for(let i = 0; i <= numbers.length -1; i++){
     if (typeof numbers[i] === 'number'){
