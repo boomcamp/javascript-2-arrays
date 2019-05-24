@@ -50,7 +50,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(fam) {
+  for(let fambam in fam) {
+    console.log(fambam);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
