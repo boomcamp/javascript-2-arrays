@@ -114,7 +114,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  var even = [];
+  var odd = [];
+  for(n of numbersArray){
+    if(n % 2 == 0){
+      even.push(n);
+    }
+    else{
+      odd.push(n);
+    }
+  }
+  return[
+    even,
+    odd,
+  ];
+}
+console.log(divider(numbersArray));
 
 
 ////////// PROBLEM 7 //////////
