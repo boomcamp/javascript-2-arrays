@@ -284,9 +284,11 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1, arr2){
+  
+}
 
-
-
+console.log(arr1);
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -336,8 +338,12 @@ var tom = {
 */
 
 //Code Here
+employees.push(joe);
+employees.push(jim);
+employees.push(ryan);
+employees.push(tom);
 
-
+console.log(employees.length);
 
 /*
   Now let's say Jim has to take a leave of absence.
@@ -345,7 +351,7 @@ var tom = {
 */
 
 //Code Here
-
+employees.splice(1, 1);
 
 
 ////////// PROBLEM 13 //////////
