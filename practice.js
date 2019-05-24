@@ -220,6 +220,13 @@ function addItem(myGroceryList, item) {
 */
 
 //Code Here
+function maker() {
+  var arr = [];
+  for (i = 1; i != 216; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
 
 
 
