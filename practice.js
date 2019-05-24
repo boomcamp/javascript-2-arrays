@@ -73,6 +73,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+function reversedLooper(letters) {
+  for (val of letters.slice(0).reverse()) {
+    alert(val);
+  }
+}
 
 
 
