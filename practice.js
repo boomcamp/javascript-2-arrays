@@ -350,11 +350,9 @@ var tom = {
 */
 
 //Code Here
-function fillEmployee(name, position, spiritAnimal) {
+function fillEmployee(employee) {
   return {
-    name,
-    position,
-    spiritAnimal
+    employee
   }
 }
 
@@ -365,19 +363,21 @@ employees = [
   fillEmployee(tom),
 ];
 
-console.log(employees.length);
+console.log(employees);
 
 /*
   Now let's say Jim has to take a leave of absence.
   Loop through your employees until you find jim, then remove him from the array.
 */
 
-//Code Here
-
-
+//Code 
+ for (i in employees) {
+   if (employees[i].employee.name == 'Jim') {
+    employees.splice(employees.indexOf(employees[i].employee.name), 1);
+   }
+ }
 
 ////////// PROBLEM 13 //////////
-
 
 /*
   A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects) of data is to have an array full of objects.
@@ -385,6 +385,7 @@ console.log(employees.length);
 */
 
 //Code Here
+var users = [];
 
 
 
@@ -405,7 +406,31 @@ var user1 = {
 
 //Code Here
 
+var user2 = {
+  name: 'John Mouser',
+  email: 'john@boom.camp',
+  password: '123',
+  username: 'john'
+};
 
+var user3 = {
+  name: 'Alex Mouser',
+  email: 'alex@boom.camp',
+  password: '123',
+  username: 'alex'
+};
+
+function fillUser(user) {
+  return {
+    user
+  }
+}
+
+users = [
+  fillUser(user1),
+  fillUser(user2),
+  fillUser(user3),
+];
 
 /*
   Now you have a very common data structure.
@@ -418,6 +443,11 @@ var user1 = {
 */
 
 //Code Here
+for (i in users) {
+  if (users[i].user.name == 'mark@boom.camp') {
+    users.splice(users.indexOf(users[i].user.name), 1);
+  }
+}
 
 
 
