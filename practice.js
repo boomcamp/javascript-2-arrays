@@ -288,7 +288,18 @@ function longer(arr1,arr2){
 */
 
 //Code Here
-
+function both(arr1,arr2){
+  var newArr = [];
+  var i = 0;
+  for(a of arr1){
+    for(b of arr2){
+      if(a == b){
+        newArr.push(a);
+      }
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
