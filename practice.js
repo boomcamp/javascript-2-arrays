@@ -230,7 +230,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
-
+function addTen(numbers){
+  newArr =[];
+  for (let i=0; i<numbers.length; i++){
+    newArr.push(parseInt(numbers[i]) + 10);
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 11 //////////
