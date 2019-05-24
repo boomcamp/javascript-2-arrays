@@ -300,23 +300,14 @@ function longer(arr1, arr2) {
 function both(arr1, arr2) {
   var newArray = [];
 
-  if (arr1.length > arr2.length) {
-    for (i = 0; i != arr1.length; i++) {
-      for(y = 0; y != arr2.length; y++) {
-        if (arr1[i] == arr2[y]) {
-          newArray.push(arr2[y]);
-        }
-      }
-    }
-  } else {
-    for (i = 0; i != arr2.length; i++) {
-      for(y = 0; y != arr1.length; y++) {
-        if (arr1[i] == arr2[y]) {
-          newArray.push(arr2[y]);
-        }
+  for (i = 0; i != arr1.length; i++) {
+    for(y = 0; y != arr2.length; y++) {
+      if (arr1[i] == arr2[y]) {
+        newArray.push(arr2[y]);
       }
     }
   }
+  
   return newArray;
 }
 
@@ -359,8 +350,22 @@ var tom = {
 */
 
 //Code Here
+function fillEmployee(name, position, spiritAnimal) {
+  return {
+    name,
+    position,
+    spiritAnimal
+  }
+}
 
+employees = [
+  fillEmployee(joe),
+  fillEmployee(jim),
+  fillEmployee(ryan),
+  fillEmployee(tom),
+];
 
+console.log(employees.length);
 
 /*
   Now let's say Jim has to take a leave of absence.
