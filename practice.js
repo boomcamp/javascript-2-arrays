@@ -182,9 +182,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+let toRemove = 'pizza'
 function removeItem(myGroceryList, toRemove){
-
+  
+  for(let item of myGroceryList){
+   if(item = toRemove){
+     let removed = myGroceryList.splice(myGroceryList.indexOf(item), myGroceryList.indexOf(item));  
+   } 
+  }
+ return myGroceryList;
 }
+
+
 
 
 ////////// PROBLEM 9 //////////
@@ -218,6 +227,20 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 
+function addTen(numbers){
+  for(let i = 0; i<numbers.length; i++){
+    if(typeof numbers[i] == 'number'){
+      numbers[i] += 10;
+    }else{
+      numbers[i] = parseInt(numbers[i], 10);
+      numbers[i] += 10;
+    }
+  
+  }
+  return numbers;
+
+}
+
 
 
 ////////// PROBLEM 11 //////////
@@ -243,8 +266,13 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
-
+function longer(arr1,arr2){
+  if(arr1.length<arr2.length){
+    return arr2;
+  }else{
+    return arr1;
+  }
+}
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -255,8 +283,9 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
-
+function both(arr1,arr2){
+  
+}
   ////////// PROBLEM 12 //////////
 
   // Do not edit the code below.
