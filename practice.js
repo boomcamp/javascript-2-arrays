@@ -101,6 +101,7 @@ function evenFinder(nums){
 }
 
 
+
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -114,6 +115,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  var arr=[];
+  var arr2=[];
+  for(var i=0;i<numbersArray.length;i++){
+    if(numbersArray[i] % 2 ===0){
+      arr.push(numbersArray[i])
+    }
+    else{
+     arr2.push(numbersArray[i])
+    }
+  }
+  // var combinedArr = arr1.join(arr2); 
+ return [arr].concat([arr2]);
+}
 
 
 
