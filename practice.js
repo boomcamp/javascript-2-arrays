@@ -226,8 +226,10 @@ function addItem(myGroceryList, item) {
 */
 
 //Code Here
-
-
+function maker() {
+  let numbas = Array.from(new Array(215), (item, index) => index + 1);
+  return numbas;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -242,7 +244,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
-
+function addTen(num) {
+  let newNum = [];
+  let x = 0;
+  for(numa of num) {
+    x = parseInt(numa);
+    newNum.push(x+10);
+  }
+  return newNum;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -267,7 +277,7 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer() {}
 
 
 /*
