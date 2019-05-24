@@ -94,7 +94,7 @@ function evenFinder(nums){
   var evenNum = [];
   for(i of nums){
     if(i%2==0){
-      evenNum = evenNum.concat(i);
+      evenNum.push(i);
     }
   }
   return evenNum;
@@ -119,9 +119,9 @@ function divider(numbersArray){
   var oddNum = [];
   for(i of numbersArray){
     if(i%2==0){
-      evenNum = evenNum.concat(i);
+      evenNum.push(i);
     }else{
-      oddNum = oddNum.concat(i);
+      oddNum.push(i);
     }
   }
   return [evenNum,oddNum];
