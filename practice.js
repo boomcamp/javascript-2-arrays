@@ -9,7 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var arr = [10,20,30];
+var arr = [10, 20, 30];
 // Do not edit the code above.
 
 /*
@@ -18,13 +18,16 @@ var arr = [10,20,30];
 */
 
 //Code Here
+function first(arr) {
+  return arr[0];
+}
 
 
 
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
-var arr = [40,50,60];
+var arr = [40, 50, 60];
 // Do not edit the code above.
 
 /*
@@ -33,6 +36,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
+function last(arr) {
+  return arr[2];
+}
 
 
 
@@ -48,6 +54,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
+function looper(family) {
+  for (let key of family) {
+    alert(key)
+  }
+}
 
 
 
@@ -63,13 +74,17 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters) {
+  for (var i = letters.length - 1; i >= 0; --i) {
+    alert(letters[i])
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var nums = [1,2,3,6,22,98,45,23,22,12];
+var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 // Do not edit the code above.
 
 /*
@@ -79,12 +94,23 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 
+function evenFinder(nums) {
 
+  var even = [];
+
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0) {
+      even.push(nums[i]);
+    }
+  }
+
+  return even;
+}
 
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
+var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 // Do not edit the code above.
 
 /*
@@ -95,12 +121,28 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
+function divider(numbersArray) {
+
+  var evens = [];
+  var odds = [];
+
+  for (var i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      evens.push(numbersArray[i]);
+    }
+    else {
+      odds.push(numbersArray[i]);
+    }
+  }
+
+  return [evens,odds];
+}
 
 
 ////////// PROBLEM 7 //////////
 
 // Do not edit the code below.
-var getRandomArbitrary = function() {
+var getRandomArbitrary = function () {
   return Math.floor(Math.random() * 30);
 };
 // Do not edit the code above.
@@ -116,7 +158,10 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(myArray){
+  var randomNumber = getRandomArbitrary();
+	return myArray.indexOf(randomNumber) === -1 ? false: true;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -146,6 +191,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function removeItem(myGroceryList, item){
+  
+  return myGroceryList.filter(function(listItem){
+    return listItem !== item;
+  });
+}
+
+function addItem(myGroceryList,item){
+
+  newArr =  myGroceryList.push(item);
+  return newArr;
+}
+
+
+
+
 
 
 ////////// PROBLEM 9 //////////
@@ -155,8 +216,16 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker() {
 
+  var myArr = [];
 
+  for (var i = 0; i < 215; i++) {
+    myArr[i] = i + 1;
+  }
+
+  return myArr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -172,6 +241,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 
+function addTen(numbers){
+
+  num = [];
+
+  for (i = 0; i < numbers.length; i++){
+    num.push(Number(numbers[i]) + 10);
+  }
+  return num;
+}
+addTen(numbers)
 
 
 ////////// PROBLEM 11 //////////
@@ -181,10 +260,10 @@ var num1 = Math.floor(Math.random() * 30);
 var num2 = Math.floor(Math.random() * 30);
 var arr1 = [];
 var arr2 = [];
-for(var i = 0; i < num1; i++){
+for (var i = 0; i < num1; i++) {
   arr1.push(i);
 }
-for(var i = 0; i < num2; i++){
+for (var i = 0; i < num2; i++) {
   arr2.push(i);
 }
 // Do not edit the code above.
@@ -196,6 +275,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1, arr2){
+  
+}
 
 
 
@@ -217,27 +299,27 @@ for(var i = 0; i < num2; i++){
 var employees = [];
 
 var joe = {
-    name: 'Joe',
-    position: 'Instructor',
-    spiritAnimal: 'Honey Badger'
+  name: 'Joe',
+  position: 'Instructor',
+  spiritAnimal: 'Honey Badger'
 };
 
 var jim = {
-    name: 'Jim',
-    position: 'CEO',
-    spiritAnimal: 'butterfly'
+  name: 'Jim',
+  position: 'CEO',
+  spiritAnimal: 'butterfly'
 };
 
 var ryan = {
-    name: 'Ryan',
-    position: 'Marketing',
-    spiritAnimal: 'fox'
+  name: 'Ryan',
+  position: 'Marketing',
+  spiritAnimal: 'fox'
 };
 
 var tom = {
-    name: 'Tom',
-    position: 'Sales',
-    spiritAnimal: 'horse'
+  name: 'Tom',
+  position: 'Sales',
+  spiritAnimal: 'horse'
 };
 // Do not edit the code above.
 
@@ -248,7 +330,8 @@ var tom = {
 */
 
 //Code Here
-
+employees.push('joe', 'jim', 'ryan', 'tom');
+console.log(employees.length);
 
 
 /*
@@ -257,6 +340,13 @@ var tom = {
 */
 
 //Code Here
+
+employees.forEach(function(element, index, array){
+
+  if (element.name === "jim") {
+  	array.splice(index,1);
+  }
+})
 
 
 
@@ -269,6 +359,7 @@ var tom = {
 */
 
 //Code Here
+var users = [];
 
 
 
@@ -280,10 +371,10 @@ var tom = {
 
 // Do not edit the code below.
 var user1 = {
-    name: 'Mark Mouser',
-    email: 'mark@boom.camp',
-    password: 'hunter2',
-    username: 'ihazcode'
+  name: 'Mark Mouser',
+  email: 'mark@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
 };
 // Do not edit the code above.
 
