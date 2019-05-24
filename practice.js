@@ -197,7 +197,6 @@ function removeItem(myGroceryList, item) {
         myGroceryList.splice( myGroceryList.indexOf(item), 1 );
       }
     }
-    console.log(myGroceryList);
     return myGroceryList;
   } else {
     return [];
@@ -243,6 +242,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(numbers) {
+  for (val of numbers) {
+    console.log(typeof val);
+  }
+}
 
 ////////// PROBLEM 11 //////////
 
