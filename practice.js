@@ -53,12 +53,9 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 //Code Here
 function looper(family){
-  var arr = [];
-  
-  for(i = family.length; i>0; i--){
-    alert(arr[i]);
-    arr.push(i);
-  } return arr;
+  for(let c=0; c<family.length; c++){
+    alert(family[c]);
+  }
 }
 
 
@@ -74,10 +71,19 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+function reversedLooper(letters){
+  for(let i = letters.length-1; i >= 0; i--){
+    alert(letters[i]);
+  } 
+}
+
 // function reversedLooper(letters){
-//   for(i=0; i<letters.length; i++){
+//   var arr = [];
+  
+//   for(let i = letters.length -1; i>=0; i--){
 //     alert(letters[i]);
-//   }
+//     arr = letters.push(i);
+//   } return arr;
 // }
 
 
@@ -93,14 +99,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-// function evenFinder(nums){
-//   for(i=0; i< nums.length; i++){
-//     if (nums[i] % 2 == 0){
-//       return nums;
-//     }
-//   }
-// }
 
+function evenFinder(nums){
+  var evenArr = [];
+
+  for(let i=0; i< nums.length; i++){
+    if (nums[i] % 2 === 0){
+      // return nums;
+      evenArr.push(nums[i]);
+    }
+  }return evenArr;
+} 
 
 ////////// PROBLEM 6 //////////
 
@@ -115,19 +124,36 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+// var arr = [[even, odd]];
+
 // function divider(numbersArray){
 //   for(i=0; i < numbersArray.length; i++){
 //     if(numbersArray[i] % 2 == 0){
-//       numbersArray[i] = [[,]];
-//       // return divider([numbersArray, 0 ]);
-//     }else {
-//       // return divider(0, numbersArray)
-//     }
-    
-//   }
+//       arr[[even]].push(numbersArray[i]);
+//       // arr = numbersArray[i];
+//     }  // return divider([numbersArray, 0 ]);
+//     else {
+//       arr[[odd]].push(numbersArray[i]);
+//     }  // return divider(0, numbersArray)
+//   }var merge = (arr[[]], arr);
+//   return merge;
 // }
-// return divider(numbersArray);
-// returndivider(numbersArray);
+function divider(numbersArray){
+  var evenArr = [];
+  var oddArr = [];
+  var merge = [[]];
+
+  for(let i=0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      evenArr.push(numbersArray[i]);
+    }
+    else {
+      oddArr.push(numbersArray[i]);
+    }
+  }
+  merge = [evenArr, oddArr];
+  return merge;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -148,10 +174,38 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(array){
+  let output = 0;
+  let randomNumber = getRandomArbitrary();
+  console.log(randomNumber);
+
+  for(let i=0; i < array.length; i++){
+    if(randomNumber === array[i] && randomNumber !== undefined){
+      output = 1;
+      break;
+    }
+    else {
+      output = 0;
+    }
+  }
+  if(output === 1){
+      // result = false;
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 // function finder(array){
 //   var randomNumber = getRandomArbitrary();
-//   for(i=0; i <= randomNumber.length; i++){
-//     if(randomNumber[i] ===   )
+//   for(a=0; a <= 30; a++){
+//     for(i=0; i <= randomNumber.length; i++){
+//       if(randomNumber[i] === undefined)
+//         var result = false;
+//       else 
+//         result = true;
+//     } return result;
 //   }
 // }
 
@@ -183,10 +237,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 function removeItem(myGroceryList, item){
-  
+  if(myGroceryList && item){
+    for(let i=0; i<myGroceryList.length; i++){
+      if(myGroceryList[i] === item){
+        myGroceryList.splice(i, 1);
+      }
+    } 
+    return myGroceryList;
+  }
+    else
+      return [];
 }
 
+function addItem(myGroceryList, item){
+  if(myGroceryList && item){
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
+  else
+    return [];
+}
 
+removeItem(myGroceryList, 'pizza');
+addItem(myGroceryList, 'shampoo');
 ////////// PROBLEM 9 //////////
 
 /*
@@ -194,12 +267,14 @@ function removeItem(myGroceryList, item){
 */
 
 //Code Here
-// function maker(){
-//   for(a=1; a < 215; a++){
-//     var arr = [a]; 
-//     return arr;
-//   }
-// }
+
+function maker(){
+  var arr =  [];
+
+  for(let a=1; a <= 215; a++){
+    arr.push(a);
+  } return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -215,8 +290,25 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+var arr = [];
+var newArr = [];
+// var parseArr = [];
 
 
+function addTen(numbers){
+  for(let n=0; n<numbers.length; n++){
+    var parsedArr = parseInt(numbers[n], 10);
+    arr.push(parsedArr);
+  } 
+  // return arr;
+
+  for(let p=0; p<arr.length; p++){
+    arr[p] += 10;
+    newArr.push(arr[p]);
+  }
+  return newArr;
+
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -241,7 +333,9 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function longer(arr1, arr2){
+  return arr1, arr2;
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -252,8 +346,18 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+var arrMatch = [];
 
-
+function both(arr1, arr2){
+  for(let a=0; a<arr1.length; a++){
+    for(let b=0; b<arr2.length; b++){
+      if(arr1[a] === arr2[b]){
+        arrMatch.push(arr1[a]);
+      }
+    }
+  }
+  return arrMatch;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -292,7 +396,8 @@ var tom = {
 */
 
 //Code Here
-
+var employees = ['joe', 'jim', 'ryan', 'tom'];
+console.log(employees);
 
 
 /*
@@ -301,6 +406,12 @@ var tom = {
 */
 
 //Code Here
+for(let i=0; i<employees.length; i++){
+  if(employees[i] === 'jim'){
+    // delete employees[i];
+    employees.splice(i, 1);
+  }
+}  console.log(employees);
 
 
 
@@ -313,7 +424,7 @@ var tom = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -332,7 +443,23 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Yu Shirota',
+  email: 'yu.shirota@gmail.com',
+  password: 'pass1234',
+  username: 'yuyuyu'
+};
 
+var user3 = {
+  name: 'Captain America',
+  email: 'captaim.america@boom.camp',
+  password: 'pass1234',
+  username: 'captain1234'
+};
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 
 /*
@@ -346,7 +473,13 @@ var user1 = {
 */
 
 //Code Here
-
+for(let i = 0; i < users.length; i++){
+  if(users[i].email === 'mark@boom.camp'){
+    // delete users[i];
+    users.splice(i, 1);
+  }
+}
+console.log(users);
 
 
 /*
