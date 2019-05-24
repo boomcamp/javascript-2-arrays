@@ -213,7 +213,13 @@ function addItem(myGroceryList,items){
 */
 
 //Code Here
-
+function maker(){
+  var arr = [];
+  for(var i = 1 ;i<=215;i++){
+    var arr = arr.concat(i);
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
