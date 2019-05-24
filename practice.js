@@ -66,8 +66,9 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+function reversedLooper(letters) {
 
-
+}
 
 ////////// PROBLEM 5 //////////
 
