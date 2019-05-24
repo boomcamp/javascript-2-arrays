@@ -17,8 +17,11 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+first(arr);
 
+function first(arr){
+  return arr.shift();
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -32,9 +35,11 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+last(arr);
 
-
+function last(arr){
+  return arr.pop();
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -47,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
+function looper(family){
+  family.forEach(element => {
+    alert(element);
+  });
+}
 
 
 
@@ -62,10 +71,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
 
-
-
+var reversedLooper = function(letters){
+  for(let i = letters.length -1 ; i>=0 ; i--){
+    alert(letters[i]);
+  }
+}
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
@@ -77,8 +88,16 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
 
+var evenFinder = function(nums){
+  let newNums = [];
+  nums.forEach(element => {
+    if(element%2 == 0){
+      newNums.push(element);
+    }
+  });
+  return newNums;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -93,8 +112,25 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
 
+var divider = function(numbersArray){
+  let even = [];
+  let odd = [];
+  let newNumbers = [];
+
+  numbersArray.forEach(element => {
+    if(element%2 == 0){
+      even.push(element);
+    }
+    else{
+      odd.push(element);
+    }
+  });
+  newNumbers.push(even);
+  newNumbers.push(odd);
+  
+  return newNumbers;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -102,7 +138,9 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 // Do not edit the code below.
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
+  
 };
+
 // Do not edit the code above.
 
 /*
@@ -115,8 +153,16 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
-
+var finder = function(arr){
+  var randomNumber = getRandomArbitrary();
+  let arrayIs = false;
+  arr.forEach(element => {
+    if(randomNumber == element){
+      arrayIs = true;
+    }
+  });
+  return arrayIs;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -144,9 +190,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+var removeItem = function(myGroceryList , item){
+  if(!myGroceryList || !item){
+    return [];
+  }
 
+  myGroceryList.forEach(element => {
+    if(element == item){
+      let index = myGroceryList.indexOf(element);
+       myGroceryList.splice(index , 1);
+    }
+   
+  });
+  
+  return myGroceryList;
+}
 
+var addItem = function(myGroceryList , item){
+  if(!myGroceryList || !item){
+    return [];   
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -154,8 +220,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
+var maker = function(){
+  let arr = [];
+  for(let i = 1; i <= 215; i++){
+    arr.push(i);
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -170,7 +241,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
 
-//Code Here
+var addTen = function(numbers){
+  let newArr = [];
+  let changedElement = 0;
+  numbers.forEach(element => {
+    changedElement = Number(element);
+    changedElement+= 10;
+    newArr.push(changedElement);
+  });
+  return newArr;
+}
 
 
 
@@ -195,8 +275,15 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
 
+var longer = function(arr1 , arr2){
+    if(arr1.length > arr2.length){
+      return arr1;
+    }
+    else{
+      return arr2;
+    }
+}
 
 
 /*
@@ -207,8 +294,18 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+var both = function(arr1 , arr2){
+    let newArr = [];
 
+    arr1.forEach(arr1Elem => {
+      arr2.forEach(arr2Elem => {
+        if(arr1Elem == arr2Elem){
+         newArr.push(arr2Elem);
+        }
+      });
+    });
+    return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -247,9 +344,7 @@ var tom = {
   After that console.log the length of the Array and make sure that it's equal to 4.
 */
 
-//Code Here
-
-
+employees.push(joe , jim , ryan , tom);
 
 /*
   Now let's say Jim has to take a leave of absence.
@@ -257,6 +352,13 @@ var tom = {
 */
 
 //Code Here
+
+employees.forEach(element => {
+  if(element.name == 'Jim'){
+    let index = employees.indexOf(element);
+    employees.splice(index, 1);
+  }
+});
 
 
 
@@ -268,8 +370,7 @@ var tom = {
   Create an empty array called users.
 */
 
-//Code Here
-
+var users = [];
 
 
 /*
@@ -285,9 +386,30 @@ var user1 = {
     password: 'hunter2',
     username: 'ihazcode'
 };
+
 // Do not edit the code above.
 
-//Code Here
+
+var user2 = {
+  name: 'Two Mouser',
+  email: 'Two@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+var user3 = {
+  name: 'Three Mouser',
+  email: 'Three@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+var user4 = {
+  name: 'Four Mouser',
+  email: 'Four@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+
+users.push(user1 , user2 , user3 , user4);
 
 
 
@@ -301,9 +423,12 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
-
-
+users.forEach(element => {
+    if(element.email == 'mark@boom.camp'){
+      let indexOfElement = users.indexOf(element);
+      users.splice(indexOfElement , 1);
+    }
+});
 
 /*
   The activity we just did is very much how data works in 'the real world'.
