@@ -378,7 +378,7 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1, {name: "John", email: "john@doe", password: "imjohn1", username: "john-1"}, {name: "Jane", email: "jane@doe", password: "imjane1", username: "jane-1"});
 
 /*
   Now you have a very common data structure.
@@ -392,7 +392,11 @@ var user1 = {
 
 //Code Here
 
-
+for (let i=0; i<users.length; i++){
+  if (users[i].email==='mark@boom.camp'){
+    users.splice(i, 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
