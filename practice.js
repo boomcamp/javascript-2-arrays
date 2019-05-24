@@ -277,7 +277,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-function longer() {}
+function longer(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  } else {
+    return arr2;
+  }
+}
 
 
 /*
