@@ -182,18 +182,31 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-let toRemove = 'pizza'
+let toRemove = 'pizza';
+let emptyArr = [];
 function removeItem(myGroceryList, toRemove){
-  
+if(myGroceryList  && toRemove){
   for(let item of myGroceryList){
    if(item = toRemove){
-     let removed = myGroceryList.splice(myGroceryList.indexOf(item), myGroceryList.indexOf(item));  
+     myGroceryList.splice(myGroceryList.indexOf(item), 1  );  
    } 
+   return myGroceryList;
   }
- return myGroceryList;
+}else{
+  return emptyArr;
+}
 }
 
-
+let toAdd = 'cereal';
+function addItem(myGroceryList, toAdd){
+  if(myGroceryList && toAdd){
+  myGroceryList.push(toAdd);
+  return myGroceryList;
+}
+else{
+  return emptyArr;
+}
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -284,7 +297,15 @@ function longer(arr1,arr2){
 //Code Here
 
 function both(arr1,arr2){
-  
+  same = [];
+  for(nums1 of arr1){
+    for(nums2 of arr2){
+      if(nums1 == nums2){
+        same.push(nums1);
+      }
+    }
+  }
+  return same;
 }
   ////////// PROBLEM 12 //////////
 
