@@ -147,6 +147,17 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+function finder(numbers) {
+  var randomNumber = getRandomArbitrary();
+  for (i = 0; i < numbers.length; i++){
+    if (i === randomNumber){
+      return true;
+    }
+  }
+      return false;
+}
+
 
 
 
@@ -279,7 +290,8 @@ var tom = {
 */
 
 //Code Here
-
+employees = [joe, jim, ryan, tom];
+console.log(employees.length);
 
 
 /*
@@ -288,8 +300,12 @@ var tom = {
 */
 
 //Code Here
-
-
+for (value of employees) {
+  if(value.name === 'Jim') {
+    employees.splice(employees.indexOf(value), 1);
+  }
+}
+console.log(employees.length);
 
 ////////// PROBLEM 13 //////////
 
