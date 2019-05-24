@@ -90,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var evenNum = [];
+  for(i of nums){
+    if(i%2==0){
+      evenNum = evenNum.concat(i);
+    }
+  }
+  return evenNum;
+}
 
 
 ////////// PROBLEM 6 //////////
