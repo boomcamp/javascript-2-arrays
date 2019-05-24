@@ -52,12 +52,13 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
+
+
 function looper(family) {
-  for (let i = 0; i < family.length; i++) {
-    alert(family[i]);
+  for (let i of family){
+    alert(i);
   }
 }
-looper(family);
 
 
 ////////// PROBLEM 4 //////////
@@ -72,8 +73,6 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
-
 
 ////////// PROBLEM 5 //////////
 
