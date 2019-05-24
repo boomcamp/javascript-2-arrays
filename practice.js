@@ -90,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var arr=[];
+  for(var i=0;i<nums.length;i++){
+    if(nums[i] % 2 == 0){
+      arr.push(nums[i]);
+    }
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 6 //////////
