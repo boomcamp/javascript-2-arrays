@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr.pop();
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family){
+  for(i = 0; i <= family.length -1; i++ ){
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for(count = letters.length - 1; count!== -1;count--){
+    //alert(letters[count]);
+  }
+}
+reversedLooper(letters);
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +91,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  even = [];
+  for(i=0; i <= nums.length - 1; i++){
+    if (nums[i] % 2 === 0){
+      even.push(nums[i]);
+    }
+  }
+  return even;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -94,7 +115,24 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  let evens = evenFinder(numbersArray);
+  let odds = [];
 
+  for(i=0; i <= numbersArray.length - 1; i++){
+    if (numbersArray[i] % 2 !== 0){
+      odds.push(numbersArray[i]);
+    }
+  }
+ 
+  combinedarray = [];
+  combinedarray.push(evens);
+  combinedarray.push(odds);
+  console.log(combinedarray);
+  return combinedarray;
+}
+
+divider(numbersArray);
 
 
 ////////// PROBLEM 7 //////////
@@ -104,7 +142,7 @@ var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
 // Do not edit the code above.
-
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 /*
   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
@@ -116,7 +154,21 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  let randomNumber = getRandomArbitrary();
+  console.log(randomNumber);
+  for(i = 0; i <= arr.length -1; i++){
+    if(arr[i] == randomNumber){
+      return true;
+      break;
+    }
+    else{
+      continue;
+    }
+  }
+  return false;
+}
+finder(numbers);
 
 
 ////////// PROBLEM 8 //////////
