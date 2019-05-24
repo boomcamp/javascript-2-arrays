@@ -248,15 +248,22 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 addTen(numbers);
 
 function addTen(numbers) {
-    var m = [];
-    numbers.forEach(function(n) {
-        while (typeof n == typeof 'hello') {
-            console.log(n);
+    var m = numbers.length;
+    for (var i = 0; i < m; i++) {
+        if (typeof numbers[i] === typeof '') {
+            numbers[i] = parseInt(numbers[i]);
         }
-    });
-    console.log(m);
-    // return numbers;
+        numbers[i] += 10;
+
+    }
+    console.log(numbers)
+    return numbers;
+
+
 }
+
+// return numbers;
+
 
 
 
