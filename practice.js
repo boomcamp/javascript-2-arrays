@@ -19,6 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -34,7 +37,9 @@ var arr = [40,50,60];
 
 //Code Here
 
-
+function last(arr){
+  return arr[arr.length-1];
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -48,9 +53,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
-
-
+function looper(family){
+  for (let member of family){
+    alert(member);
+  }
+}
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -63,8 +70,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
-
+function reversedLooper(letters){
+  for(let i=letters.length-1; i>=0; i--){
+    alert(letters[i]);
+  }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -78,9 +88,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
-
-
+let evenNums = [];
+function evenFinder(nums){
+  for (let num of nums){
+    if(num%2==0){
+      evenNums.push(num);   
+    }
+  }
+  return evenNums; 
+}
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -94,8 +110,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+let numberGroup = [[],[]];
 
-
+function divider(numbersArray){
+  for (let number of numbersArray){
+    if(number%2==0){
+      numberGroup[0].push(number)
+    }else{
+     numberGroup[1].push(number)
+    }
+  }
+ return numberGroup;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -116,9 +142,19 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
-
-
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+function finder(numbers){
+  let randomNumber = getRandomArbitrary();
+  // console.log(randomNumber)
+  var found = numbers.find(function(element) {
+   return element === randomNumber;
+});
+if(found == undefined){
+  return false;
+}else{
+  return true;
+}
+}
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
@@ -146,6 +182,9 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function removeItem(myGroceryList, toRemove){
+
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -156,7 +195,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+// let createdArr = [];
+function maker(){
+let createdArr = [];
+for(counter = 1; counter <=215; counter++){
+createdArr.push(counter);
+}
+return createdArr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -211,52 +257,54 @@ for(var i = 0; i < num2; i++){
 
 
 
-////////// PROBLEM 12 //////////
+  ////////// PROBLEM 12 //////////
 
-// Do not edit the code below.
-var employees = [];
+  // Do not edit the code below.
+  var employees = [];
 
-var joe = {
-    name: 'Joe',
-    position: 'Instructor',
-    spiritAnimal: 'Honey Badger'
-};
+  var joe = {
+      name: 'Joe',
+      position: 'Instructor',
+      spiritAnimal: 'Honey Badger'
+  };
 
-var jim = {
-    name: 'Jim',
-    position: 'CEO',
-    spiritAnimal: 'butterfly'
-};
+  var jim = {
+      name: 'Jim',
+      position: 'CEO',
+      spiritAnimal: 'butterfly'
+  };
 
-var ryan = {
-    name: 'Ryan',
-    position: 'Marketing',
-    spiritAnimal: 'fox'
-};
+  var ryan = {
+      name: 'Ryan',
+      position: 'Marketing',
+      spiritAnimal: 'fox'
+  };
 
-var tom = {
-    name: 'Tom',
-    position: 'Sales',
-    spiritAnimal: 'horse'
-};
-// Do not edit the code above.
+  var tom = {
+      name: 'Tom',
+      position: 'Sales',
+      spiritAnimal: 'horse'
+  };
+  // Do not edit the code above.
 
-/*
-  Above you're given an empty array and four variables containing objects.
-  Fill the employees array with those four objects.
-  After that console.log the length of the Array and make sure that it's equal to 4.
-*/
+  /*
+    Above you're given an empty array and four variables containing objects.
+    Fill the employees array with those four objects.
+    After that console.log the length of the Array and make sure that it's equal to 4.
+  */
 
-//Code Here
+  //Code Here
+  employees.push(joe, jim, ryan, tom);
+  console.log(employees.length);
 
 
+  /*
+    Now let's say Jim has to take a leave of absence.
+    Loop through your employees until you find jim, then remove him from the array.
+  */
 
-/*
-  Now let's say Jim has to take a leave of absence.
-  Loop through your employees until you find jim, then remove him from the array.
-*/
-
-//Code Here
+  //Code Here
+  let removed = employees.splice(1,1);
 
 
 
@@ -270,7 +318,26 @@ var tom = {
 
 //Code Here
 
-
+let users = [
+  {
+    name: 'Earl',
+    email: 'earl@boom.camp',
+    password: 'earl-p',
+    username:  'earl-u'
+  },
+  {
+    name: 'Martin',
+    email: 'martin@boom.camp',
+    password: 'martin-p',
+    username: 'martin-u'
+  },
+  {
+    name: 'Raq',
+    email: 'raq@boom.camp',
+    password: 'raq-p',
+    username: 'raq-u'
+  }
+];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
