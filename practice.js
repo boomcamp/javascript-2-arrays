@@ -116,18 +116,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 function divider(numbersArray){
-  var arr=[];
-  var arr2=[];
+  var arr=[[],[]];
+  
   for(var i=0;i<numbersArray.length;i++){
     if(numbersArray[i] % 2 ===0){
-      arr.push(numbersArray[i])
+      arr[0].push(numbersArray[i])
     }
     else{
-     arr2.push(numbersArray[i])
+     arr[1].push(numbersArray[i])
     }
   }
   // var combinedArr = arr1.join(arr2); 
- return [arr].concat([arr2]);
+ return arr;
 }
 
 
@@ -151,7 +151,19 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  var bool=true;
+  var randomNumber=getRandomArbitrary();
+  for(index of arr){
+    if(index == randomNumber){
+     bool=true
+    }
+    else{
+      bool=false
+    }
+  }
+  return bool;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -180,7 +192,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function removeItem(myGroceryList,item){
+  var arr=[];
+if(myGroceryList && item){
+myGroceryList.splice(myGroceryList.indexOf(item),1)
+return myGroceryList;
+}
+else{
+    return arr;
+ }
+}
+function addItem(myGroceryList,itemAdd){
+  if(myGroceryList && itemAdd){
+    myGroceryList.push(itemAdd);
+    return myGroceryList;
+  }
+  else{
+    return [];
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -190,7 +220,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var arr1=[];
+  for(var i=1;i<=215;i++){
+    arr1.push(i)
+  }
+  return arr1
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -207,7 +243,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 
-
+function addTen(numbers){
+  var arr=[];
+  var toNum=0;
+  for(var i=0;i<numbers.length;i++){
+   toNum=Number(numbers[i]);
+     arr.push(toNum+10);
+  }
+  return arr;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -231,7 +275,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1,arr2){
+  if(arr1.length>arr2.length){
+    return arr1;
+  }
+  else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -243,7 +294,18 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1,arr2){
+  
+    var arr=[];
+   for (index1 of arr1){
+     for(index2 of arr2){
+       if(index1===index2){
+         arr.push(index1);
+       }
+     }
+   }
+   return arr;
+  }
 
 
 ////////// PROBLEM 12 //////////
@@ -284,7 +346,8 @@ var tom = {
 
 //Code Here
 
-
+employees.push(joe,jim,ryan,tom);
+console.log(employees.length);
 
 /*
   Now let's say Jim has to take a leave of absence.
@@ -293,6 +356,14 @@ var tom = {
 
 //Code Here
 
+for(i of employees){
+  if(i.name === 'Jim'){
+    employees.splice(employees.indexOf(i),1);
+    
+  }
+ 
+}
+console.log(employees.length)
 
 
 ////////// PROBLEM 13 //////////
@@ -304,7 +375,7 @@ var tom = {
 */
 
 //Code Here
-
+var users=[];
 
 
 /*
@@ -324,7 +395,21 @@ var user1 = {
 
 //Code Here
 
-
+users=[
+  [user1],
+  [user2={
+    name: 'Mark Mouseer',
+    email: 'marks@boom.camp',
+    password: 'hunter22',
+    username: 'ihazcode21'
+  }],
+  [user2={
+    name: 'Markeef Mouseer',
+    email: 'markeef@boom.camp',
+    password: 'asjkdhasjkd',
+    username: 'markyy'
+  }]
+]
 
 /*
   Now you have a very common data structure.
@@ -338,7 +423,11 @@ var user1 = {
 
 //Code Here
 
-
+for (i of users){
+  if(i.email==='mark@boom.camp'){
+    users.splice(users.indexOf(i))
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
