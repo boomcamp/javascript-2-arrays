@@ -110,7 +110,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  even = [];
+  odd = [];
+  newArr = [];
+  for (let i=0; i< numbersArray.length; i++){
+    if (numbersArray[i]%2==0){
+      even.push(numbersArray[i]);
+    }else{
+      odd.push(numbersArray[i]);
+    }
+  }
+  newArr[0]= even;
+  newArr[1]= odd;
+  return newArr;
+}
 
 
 ////////// PROBLEM 7 //////////
