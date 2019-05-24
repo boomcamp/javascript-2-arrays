@@ -184,7 +184,39 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  let ifFound = false;
+  let empty = [];
+  let temp = myGroceryList;
+  
+  if (item != undefined || null){
+    if (temp.indexOf(item) != -1) {
+      temp.splice(temp.indexOf(item), 1);
+      ifFound = true;
+    } else if (temp.indexOf(item) === -1) {
+        return temp;
+    }
+  } else if (item === undefined || null) {
+    return empty;
+  }
 
+  if(ifFound === true) {
+    return temp;
+  } else {
+    return empty;
+  }
+}
+
+function addItem(myGroceryList, item) {
+  let temp = myGroceryList;
+  if (item != undefined || null){
+    temp.push(item);
+    return temp;
+  } else if (item === undefined || null) {
+    return temp = [];
+  }
+  
+}
 
 
 ////////// PROBLEM 9 //////////
