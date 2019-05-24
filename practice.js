@@ -187,8 +187,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
-
+function removeItem(myGroceryList, item){
+  if(myGroceryList && item){
+    var i = myGroceryList.indexOf(item);
+    myGroceryList.splice(i,1);
+    return myGroceryList;
+  }else{ 
+    return [];
+  }
+};
+function addItem(myGroceryList,items){
+  if(myGroceryList && items){
+    myGroceryList.push(items);
+    return myGroceryList;
+  }else{ 
+    return [];
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
