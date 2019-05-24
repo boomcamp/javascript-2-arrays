@@ -418,7 +418,7 @@ users = [user1, user2, user3];
 //Code Here
 var delete_found = users.map(u => u.email);
 var mark_index = delete_found.indexOf('mark@boom.camp');
-users.splice(mark_index,1);
+users.splice(mark_index,1); 
 
 
 /*
