@@ -152,7 +152,16 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+function finder(numbers){
+  var randomNumber = getRandomArbitrary(); 
+  for(n of numbers){
+    if(n == randomNumber){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
