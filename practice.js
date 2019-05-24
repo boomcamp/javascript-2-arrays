@@ -35,8 +35,8 @@ var arr = [40,50,60];
 
 //Code Here
 function last(arr){
-  return arr[3];
-}
+  return arr[arr.length-1];
+}  
 
 
 ////////// PROBLEM 3 //////////
@@ -51,7 +51,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family) {
+  for (i of family) {
+    alert(i);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -67,7 +71,9 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 function reversedLooper(letters) {
-
+  for (i of letters.slice(0).reverse()) {
+    alert(i);
+  }
 }
 
 ////////// PROBLEM 5 //////////
@@ -82,9 +88,18 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+function evenFinder(nums) {
+  var empty = [];
 
+  for (j of nums) {
+    if (j % 2 == 0) {
+      empty.push(j);
+    }
+  }
+  return empty;
+}
 
-
+console.log(evenFinder(nums));
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -98,7 +113,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray) {
+  var evenarr = [];
+  var oddarr = [];
 
+  for (j of numbersArray) {
+    if (j % 2 == 0) {
+      evenarr.push(j);
+    } else {
+      oddarr.push(j);
+    }
+
+  }
+  return [evenarr,oddarr];
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -120,7 +148,18 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr) {
+  var randomNumber = getRandomArbitrary();
+  var bole = true;
+  for (i of arr) {
+    if (randomNumber != i) {
+      bole = false;
+    } else {
+      bole = true;
+    }
+  }
+  return bole;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -149,7 +188,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  if(myGroceryList && item){
+    var i = myGroceryList.indexOf(item);
+    myGroceryList.splice(i,1);
+    return myGroceryList;
+  }else{
+    return [];
+  }
+ };
 
+ function addItem(myGroceryList,items){
+  if(myGroceryList && items){
+    myGroceryList.push(items);
+    return myGroceryList;
+  }else{
+    return [];
+  }
+ }
 
 
 ////////// PROBLEM 9 //////////
@@ -159,7 +215,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var arr = [];
+  for(var i = 1 ;i<=215;i++){
+    var arr = arr.concat(i);
+  }
+  return arr;
+ }
 
 
 ////////// PROBLEM 10 //////////
@@ -175,7 +237,17 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
-
+function addTen(numbers){
+  var add_numbers = numbers;
+    for(var i = 0; i< numbers.length; i++){
+      if(isNaN(add_numbers[i])){
+        add_numbers[i] = numbers[i] + 10;
+      }else{
+        add_numbers[i] = parseInt(add_numbers[i], 10) + 10;
+      }
+    }
+  return add_numbers;
+ }
 
 
 ////////// PROBLEM 11 //////////
@@ -200,7 +272,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1,arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else{
+    return arr2;
+  }
+ }
 
 
 /*
@@ -212,7 +290,20 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1,arr2){
+  var newArr = [];
+  var i = 0;
+  for(a of arr1){
+    for(b of arr2){
+      if(a == b){
+       newArr.push(a);
+      }
+    }
+  }
+  return newArr;
+ }
+ 
+ 
 
 
 ////////// PROBLEM 12 //////////
