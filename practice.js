@@ -236,7 +236,17 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 
-
+function addTen(numbers){
+  var add_numbers = numbers; 
+    for(var i = 0; i< numbers.length; i++){
+      if(isNaN(add_numbers[i])){ 
+        add_numbers[i] = numbers[i] + 10;
+      }else{
+        add_numbers[i] = parseInt(add_numbers[i], 10) + 10;
+      }
+    }
+  return add_numbers;
+}
 
 ////////// PROBLEM 11 //////////
 
