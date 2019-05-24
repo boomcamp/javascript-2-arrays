@@ -263,12 +263,24 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
-function addTen(numbers){
- for (i = 0; i < numbers.length - 1; index++) {
-   numbers[i] = numbers[i] + 10; 
- } 
- return numbers;
-}
+function addTen(nums){
+  let arr = [];
+ 
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i].constructor == String){
+      tmp = parseInt(nums[i], 10);
+      tmp = tmp + 10;
+      arr.push(tmp);
+    } 
+    else{
+      arr.push(nums[i] + 10);
+    }
+  } 
+   return arr;
+ }
+ 
+ addTen(numbers);
+ 
 
 
 ////////// PROBLEM 11 //////////
@@ -293,7 +305,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1>arr2){
+    return arr1;
+  }
+  else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -305,7 +324,19 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+//Code Here
+function both(arr1, arr2){
+   let newarr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if(i == j){
+        newarr.push(i);
+      }
+    }
+  }
+  return newarr;
 
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -345,6 +376,9 @@ var tom = {
 */
 
 //Code Here
+employees.push(joe,jim,ryan,tom);
+console.log(employees.length);
+
 
 
 
@@ -355,7 +389,13 @@ var tom = {
 
 //Code Here
 
-
+/* gonna continue
+for(var i=0; i<employees.length; i++) {
+  for (var key in employees[i].values) {
+     
+  }
+}
+*/
 
 ////////// PROBLEM 13 //////////
 
