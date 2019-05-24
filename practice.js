@@ -17,9 +17,9 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
-
-
+function first(arr){
+  return arr[0];
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -32,8 +32,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
-
+function last(arr){
+  return arr[arr.length-1];
+} 
 
 
 ////////// PROBLEM 3 //////////
@@ -47,8 +48,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
-
+function looper(family){
+  for (val in family){
+    alert(family[val])
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -62,8 +66,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
-
+function reversedLooper(letters){
+  for (var i = letters.length - 1; i >= 0; --i) {
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -77,9 +84,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
-
-
+function evenFinder(nums){
+  var newArr = [];
+  for (i in nums){
+    if (nums[i] % 2 === 0)
+      newArr.push(nums[i])
+  }
+  return newArr
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -93,7 +105,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  var evenArr = [],
+      oddArr = [],
+      finalArr = [];
+
+  for (i in numbersArray){
+    if (numbersArray[i] % 2 === 0)
+      evenArr.push(numbersArray[i])
+    else
+      oddArr.push(numbersArray[i])
+  }
+  finalArr.push(evenArr)
+  finalArr.push(oddArr)
+  return finalArr;
+}
 
 
 
@@ -115,7 +141,14 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(numbers){
+  var randomNumber = getRandomArbitrary();
+  for (i in numbers){
+    if (randomNumber === numbers[i])
+      return true
+  }
+  return false;
+}
 
 
 
@@ -144,7 +177,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList, item) {
+  var empty = [];
+  if (myGroceryList && item) {
+    for (i in myGroceryList){
+      if (item === myGroceryList[i]){
+        myGroceryList.splice(i, 1)
+        return myGroceryList;
+      }
+    }
+    return myGroceryList;
+  }else{
+    return empty;
+  }
+}
+
+function addItem(myGroceryList, item) {
+  var empty = [];
+  if (myGroceryList && item) {
+  myGroceryList.push(item)
+  return myGroceryList;
+  }else{
+    return empty;
+  }
+}
 
 
 
@@ -154,7 +210,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker(){
+  var arr = [];
+  for (var i = 0; i <= 215 ; i++){
+    arr[i] = i
+  }
+  arr.shift()
+  return arr
+}
 
 
 
