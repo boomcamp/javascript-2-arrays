@@ -74,8 +74,6 @@ function reversedLooper(letahs) {
   }
 }
 
-reversedLooper(letters);
-
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
@@ -91,12 +89,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 function evenFinder(nums) {
   let temp = [];
   for (let numbah of nums) {
-    if(i % 2 === 0) {
+    if(numbah % 2 === 0) {
       temp.push(numbah);
     }
   }
+  return temp;
 }
 
+evenFinder(nums);
 
 ////////// PROBLEM 6 //////////
 
