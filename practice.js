@@ -208,7 +208,13 @@ function addItem(myGroceryList, item){
 */
 
 //Code Here
-
+function maker(){
+  arr=[];
+  for (let i=1; i<=215; i++){
+    arr.push(i);
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
