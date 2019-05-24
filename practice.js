@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -26,14 +28,16 @@ var arr = [10,20,30];
 // Do not edit the code below.
 var arr = [40,50,60];
 // Do not edit the code above.
-
-/*
-  Create a function named 'last' that is given 'arr' as an argument.
+https://github.com/boomcamp/javascript-2-objects/pull/9
+/*https://github.com/boomcamp/javascript-2-objects/pull/9
+  Create a function named 'lahttps://github.com/boomcamp/javascript-2-objects/pull/9st' that is given 'arr' as an argument.
   Return the last item in the given array.
 */
 
 //Code Here
-
+function last(arr){
+  return arr[2];
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family){
+  for(let x=0; x<family.length; x++){
+    alert(family[x]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for(let x=letters.length-1; x>=0; x--){
+      alert(letters[x]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var even = [];
+  for(let x=0; x<nums.length; x++){
+    if(nums[x] % 2 === 0){
+      even.push(nums[x]);
+    }
+  }
+  return even;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -94,7 +114,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  var even = [];
+  var odd = [];
+  for(let x=0; x<numbersArray.length; x++){
+    if(numbersArray[x] % 2 === 0){
+      even.push(numbersArray[x]);
+    } 
+    else{
+      odd.push(numbersArray[x]);
+    }
+  }
 
+  var merge = [even, odd];
+  return merge;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -116,8 +150,29 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(array){
+  var result = 0;
+  let randomNumber = getRandomArbitrary();
+  console.log(randomNumber);
+  for(let x=0; x<array.length; x++){
+    if(randomNumber === array[x]){
+      result = 1;
+      break;
+    }
+    else{
+      result = 0;
+    }
+  }
+  if(result === 1){
+    return true;
+  }
+  else{
+    return false;
+  }
+  
+}
 
-
+//finder([0,3,4,5,6,7,9,14,17,24,25,26,29,30]);
 
 ////////// PROBLEM 8 //////////
 
@@ -145,9 +200,34 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  if(myGroceryList && item){
+  for(let x=0; x<myGroceryList.length; x++){
+    if(myGroceryList[x] === item){
+      myGroceryList.splice(x, 1);
+    }
+  }
+  return myGroceryList;
+  }
+  else{
+    return [];
+  } 
+}
 
+function addItem(myGroceryList, item){
+  if(myGroceryList && item){
+  myGroceryList.push(item);
+  return myGroceryList;
+  }
+  else{
+    return [];
+  }
 
+  
+}
 
+removeItem(myGroceryList, "hotpockets");
+addItem(myGroceryList, "hotcake");
 ////////// PROBLEM 9 //////////
 
 /*
@@ -155,7 +235,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var num = [];
+  for(let x=1; x<=215; x++){
+    num.push(x);
+  }
+  return num;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -171,9 +257,23 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(numbers){
+  var integerAll = [];
+  var output = [];
+  for(let y=0; y<numbers.length; y++){
+    var temp = parseInt(numbers[y], 10);
+    integerAll.push(temp);
+  }
 
+  for(let x=0; x<integerAll.length; x++){
+    integerAll[x] += 10;
+    output.push(integerAll[x]);
+  }
 
+  return output;
+}
 
+// addTen([5, '9', 16, 19, '25', '34', 48]);
 ////////// PROBLEM 11 //////////
 
 // Do not edit the code below.
@@ -196,7 +296,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  return arr1, arr2;
+}
 
 
 /*
@@ -208,7 +310,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  var match = [];
+  for(let x=0; x<arr1.length; x++){
+    for(let z=0; z<arr2.length; z++){
+      if(arr1[x] === arr2[z]){
+        match.push(arr1[x]);
+      }
+    }
+  }
+  return match;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -248,7 +360,11 @@ var tom = {
 */
 
 //Code Here
-
+employees.push(joe);
+employees.push(jim);
+employees.push(ryan);
+employees.push(tom);
+console.log(employees.length);
 
 
 /*
@@ -257,7 +373,12 @@ var tom = {
 */
 
 //Code Here
-
+for(let x=0; x<employees.length; x++){
+  if(employees[x].name === 'Jim'){
+    employees.splice(x, 1);
+  }
+}
+console.log(employees);
 
 
 ////////// PROBLEM 13 //////////
@@ -269,7 +390,7 @@ var tom = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -288,8 +409,23 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Park Woojin',
+  email: 'woojin@boom.camp',
+  password: 'woojin_',
+  username: 'woojin_user'
+};
 
+var user3 = {
+  name: 'Seatiel Austria',
+  email: 'seatiel.austria@boom.camp',
+  password: '12141998',
+  username: 'sityel'
+};
 
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*
   Now you have a very common data structure.
@@ -302,7 +438,12 @@ var user1 = {
 */
 
 //Code Here
-
+for(let x=0; x<users.length; x++){
+  if(users[x].email === 'mark@boom.camp'){
+    users.splice(x, 1);
+  }
+}
+console.log(users);
 
 
 /*
