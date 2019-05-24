@@ -245,7 +245,6 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Return a new array after adding ten to each item in numbers.
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
-addTen(numbers);
 
 function addTen(numbers) {
     var m = numbers.length;
@@ -287,9 +286,16 @@ for (var i = 0; i < num2; i++) {
   Write a function called 'longer' that is given arr1 and arr2 as it's only arguments.
   Return the longer of the two arrays.
 */
+longer(arr1, arr2);
 
-//Code Here
-
+function longer(arr1, arr2) {
+    var newArray = [];
+    if (arr1.length > arr2.length) {
+        return arr1;
+    } else {
+        return arr2;
+    }
+}
 
 
 /*
@@ -299,8 +305,16 @@ for (var i = 0; i < num2; i++) {
 
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
+both(arr1, arr2);
 
-//Code Here
+function both(arr1, arr2) {
+    var SameElem = new Array();
+    var newArr1 = arr1.includes(arr2);
+    var newArr2 = arr2.includes(arr1);
+    SameElem.push(newArr1);
+    SameElem.push(newArr2);
+    return SameElem;
+}
 
 
 
@@ -339,8 +353,11 @@ var tom = {
   Fill the employees array with those four objects.
   After that console.log the length of the Array and make sure that it's equal to 4.
 */
+employees.push(joe);
+employees.push(ryan);
+employees.push(tom);
+employees.push(jim);
 
-//Code Here
 
 
 
@@ -349,7 +366,12 @@ var tom = {
   Loop through your employees until you find jim, then remove him from the array.
 */
 
-//Code Here
+for (var i = 0; i < employees.length; i++) {
+    if (employees[i] === jim) {
+        employees.pop();
+    }
+
+}
 
 
 
@@ -361,7 +383,7 @@ var tom = {
   Create an empty array called users.
 */
 
-//Code Here
+var users = [];
 
 
 
@@ -379,8 +401,6 @@ var user1 = {
     username: 'ihazcode'
 };
 // Do not edit the code above.
-
-//Code Here
 
 
 
