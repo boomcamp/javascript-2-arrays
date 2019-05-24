@@ -83,7 +83,7 @@ reversedLooper(letters);
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var nums = [1,2,3,6,22,98,45,23,22,12];
+var num = [1,2,3,6,22,98,45,23,22,12];
 // Do not edit the code above.
 
 /*
@@ -119,7 +119,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray) {
+  var temp = [[],[]];
+ 
+   for (let i = 0; i <= numbersArray.length-1; i++) {
+     if (numbersArray[i] % 2 === 0){
+       temp[0].push(numbersArray[i]);
+     }
+     else {
+       temp[1].push(numbersArray[i]);
+     }
+   }
+   return temp;
+ }
 
 
 ////////// PROBLEM 7 //////////
@@ -142,6 +154,19 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+function finder(array){
+  var randomNumber =  getRandomArbitrary();
+  var check = true;
+  
+  for(let i = 0; i <= array.length-1; i++){
+    if(array[i] == randomNumber){
+      check = true;
+    } else{
+      check = false;
+    }
+  }
+  return check;
+  }
 
 
 ////////// PROBLEM 8 //////////
@@ -173,6 +198,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 
 
+
 ////////// PROBLEM 9 //////////
 
 /*
@@ -180,7 +206,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker() {
+  var temp = [];
+  for (i = 1; i != 216; i++) {
+    temp.push(i);
+  }
+  return temp;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -196,7 +228,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(numbers) {
 
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -221,7 +255,12 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if (arr1.length > arr2.length)
+    return arr1;
+  else
+    return arr2;
+}
 
 
 /*
@@ -233,6 +272,20 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  var x = [];
+  for (var i = 0; i < arr1.length; i++){
+    for (var j = 0; j < arr2.length; j++){
+      if (arr1[i] === arr2[j])
+        x.push(arr1[i])
+    }
+  }
+  return x;
+}
+
+
+
+
 
 
 
@@ -273,7 +326,9 @@ var tom = {
 */
 
 //Code Here
+  employees = [joe, jim, ryan, tom];
 
+  
 
 
 /*
@@ -294,7 +349,7 @@ var tom = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -313,6 +368,27 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Jon Snow',
+  email: 'jon@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+
+var user3 = {
+  name: 'Arya Stark',
+  email: 'arya@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+
+var user4 = {
+  name: 'Sansa Stark',
+  email: 'sansa@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+
 
 
 
