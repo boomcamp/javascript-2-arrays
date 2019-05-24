@@ -390,7 +390,19 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+var user2 = {
+  name: 'Marka Mouser',
+  email: 'mark@booms.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+var user3 = {
+name: 'Marks Mouser',
+email: 'mark@booma.camp',
+password: 'hunter2',
+username: 'ihazcode'
+};
+users = [user1, user2, user3];
 
 
 /*
@@ -404,7 +416,9 @@ var user1 = {
 */
 
 //Code Here
-
+var delete_found = users.map(u => u.email);
+var mark_index = delete_found.indexOf('mark@boom.camp');
+users.splice(mark_index,1);
 
 
 /*
