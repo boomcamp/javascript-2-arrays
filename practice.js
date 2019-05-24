@@ -93,6 +93,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+var evenArray = [];
+function evenFinder(nums) {
+  for (val of nums) {
+    if(val%2 == 0) {
+      evenArray.push(val);
+    }
+  }
+ return evenArray;
+}
 
 
 
