@@ -295,7 +295,18 @@ function longer(arr1, arr2) {
 */
 
 //Code Here
+function both(arr1, arr2) {
+  let arR1 = arr1;
+  let arR2 = arr2;
+  let newArr = [];
 
+  for(let x of arr1) {
+    if (arr2.indexOf(x) != -1) {
+      newArr.push(x);
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
