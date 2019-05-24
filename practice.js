@@ -363,7 +363,7 @@ employees.splice(1, 1);
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -382,8 +382,22 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: '2Mark Mouser',
+  email: 'mark@boom.camp1',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
 
-
+var user3 = {
+  name: '1Mark Mouser',
+  email: 'mark@boom.camp2',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*
   Now you have a very common data structure.
@@ -396,7 +410,11 @@ var user1 = {
 */
 
 //Code Here
-
+for(let i=0; i<users.length; i++){
+  if(users[i].email === 'mark@boom.camp'){
+    users.splice(i, 1);
+  }
+}
 
 
 /*
