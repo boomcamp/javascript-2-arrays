@@ -285,7 +285,12 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 function longer(arr1, arr2){
-  
+  if(arr1.length<arr2.length){
+    return arr2;
+  }
+  else{
+    return arr1;
+  }
 }
 
 console.log(arr1);
@@ -298,7 +303,17 @@ console.log(arr1);
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  var newArray = [];
+  for(n of arr1){
+    for (n1 of arr2){
+      if(n === n1){
+        newArray.push(n);
+      }
+    }
+  }
+  return newArray;
+}
 
 
 ////////// PROBLEM 12 //////////
