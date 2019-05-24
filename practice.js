@@ -343,7 +343,12 @@ var tom = {
 */
 
 //Code Here
-
+employees = [
+  joe,
+  jim,
+  ryan,
+  tom
+ ]
 
 
 /*
@@ -352,7 +357,9 @@ var tom = {
 */
 
 //Code Here
-
+let names = employees.map(emp => emp.name);
+var jim_index = names.indexOf('Jim');
+employees.splice(jim_index,1);
 
 
 ////////// PROBLEM 13 //////////
