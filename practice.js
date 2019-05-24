@@ -71,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for (let i=letters.length - 1; i>=0; i--){
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -355,7 +359,7 @@ for (let i=0; i<employees.length; i++){
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -374,7 +378,6 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
 
 
 /*
