@@ -329,7 +329,8 @@ var tom = {
 */
 
 //Code Here
-
+employees.push(joe, jim, ryan, tom);
+console.log(employees.length);
 
 
 /*
@@ -338,7 +339,11 @@ var tom = {
 */
 
 //Code Here
-
+for (let i=0; i<employees.length; i++){
+  if (employees[i].name==='Jim'){
+    employees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
