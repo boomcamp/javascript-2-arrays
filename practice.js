@@ -19,7 +19,7 @@ var arr = [10,20,30];
 
 //Code Here
 function first(arr) {
-  return arr.shift();
+  return arr[0];
 }
 
 
@@ -37,7 +37,7 @@ var arr = [40,50,60];
 
 //Code Here
 function last(arr) {
-  return arr.pop();
+  return arr[arr.length - 1];
 }
 
 
@@ -142,9 +142,9 @@ var getRandomArbitrary = function() {
 };
 // Do not edit the code above.
 
-
+ /*
   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
- /* Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
+  Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
   Write a function named finder that will take in an array as an argument.
   In the function create a variable called randomNumber and set it to the invocation of getRandomArbitrary.
@@ -153,6 +153,16 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+  function finder(arr) {
+    var randomNumber = getRandomArbitrary();
+    var flag = true;
+
+    for (val of arr) {
+      flag = ((val == randomNumber) ? true : false);
+    }
+
+    return flag;
+  }
 
 ////////// PROBLEM 8 //////////
 
@@ -180,8 +190,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if (myGroceryList != undefined && item != undefined) {
+    for (val of myGroceryList) {
+      if (val == item) {
+        myGroceryList.splice( myGroceryList.indexOf(item), 1 );
+      }
+    }
+    console.log(myGroceryList);
+    return myGroceryList;
+  } else {
+    return [];
+  }
+}
 
-
+function addItem(myGroceryList, item) {
+  if (myGroceryList != undefined && item != undefined) {
+    myGroceryList.push(item);
+    return myGroceryList;
+  } else {
+    return [];
+  }
+}
 
 ////////// PROBLEM 9 //////////
 
