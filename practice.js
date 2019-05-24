@@ -311,8 +311,6 @@ function both(arr1, arr2) {
     var SameElem = new Array();
     var newArr1 = arr1.includes(arr2);
     var newArr2 = arr2.includes(arr1);
-    SameElem.push(newArr1);
-    SameElem.push(newArr2);
     return SameElem;
 }
 
