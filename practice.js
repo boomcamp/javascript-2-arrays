@@ -87,7 +87,7 @@ var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
   Write a function named evenFinder that is given nums as it's only argument.
   Return an array that contains the even numbers from the nums array.
 */
-evenFinder(nums)
+
 
 function evenFinder(nums) {
     var val2 = new Array();
@@ -113,7 +113,25 @@ var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+divider(numbersArray);
+
+function divider(numbersArray) {
+    var evensArray = new Array();
+    var oddsArray = new Array();
+    var newNumbersArray = new Array();
+    for (n of numbersArray) {
+        if (n % 2 === 0) {
+            evensArray.push(n);
+        } else {
+            oddsArray.push(n);
+        }
+    }
+    newNumbersArray.push(evensArray);
+    newNumbersArray.push(oddsArray);
+
+    return newNumbersArray;
+
+}
 
 
 
@@ -134,10 +152,13 @@ var getRandomArbitrary = function() {
   Loop through the array to see if randomNumber is in the array.
   If it is, return true, if it's not, return false
 */
+var numbers = [0, 3, 4, 5, 6, 7, 9, 14, 17, 24, 25, 26, 29, 30];
+finder(numbers);
 
-//Code Here
-
-
+function finder(array) {
+    var randomNumber = getRandomArbitrary();
+    return array.includes(randomNumber);
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -164,8 +185,37 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+//removeItem(myGroceryList, 'chips');
 
+function removeItem(myGroceryList, toRemove) {
+    var emptyArr = [];
+    if (!toRemove) {
+        return emptyArr;
+    }
+    if (!myGroceryList) {
+        return emptyArr;
+    }
+
+    if (myGroceryList.includes(toRemove)) {
+        var index = myGroceryList.indexOf(toRemove);
+        myGroceryList.splice(index, 1);
+    }
+    return myGroceryList;
+}
+
+function addItem(myGroceryList, toAdd) {
+    var emptyArr = [];
+    if (!toAdd) {
+        return emptyArr;
+    }
+    if (!myGroceryList) {
+        return emptyArr;
+    }
+
+    myGroceryList.push(toAdd);
+
+    return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
