@@ -19,6 +19,10 @@ var arr = [10,20,30];
 
 //Code Here
 
+function first(arr){
+  return arr[0];
+}
+
 
 
 ////////// PROBLEM 2 //////////
@@ -31,7 +35,7 @@ var arr = [40,50,60];
   Create a function named 'last' that is given 'arr' as an argument.
   Return the last item in the given array.
 */
-
+function last(arr){return arr[arr.length - 1];}
 //Code Here
 
 
@@ -46,7 +50,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
   Create a function named 'looper' that is given family as it's only argument.
   Loop through the given array and alert every item in the array.
 */
-
+function looper(family){
+  family.forEach(function(key){
+    alert(key);
+  })
+}
 //Code Here
 
 
@@ -61,6 +69,15 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Write a function called reversedLooper that is given letters as it's only argument.
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
+function reversedLooper(letters){
+  
+  for(i = letters.length -1;i>=0;i--)
+  {
+      alert(letters[i]);
+  }
+
+}
+
 
 //Code Here
 
@@ -76,7 +93,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Write a function named evenFinder that is given nums as it's only argument.
   Return an array that contains the even numbers from the nums array.
 */
+function evenFinder(nums){
+   let even = [];
+   nums.forEach(function(key){
+     key % 2 === 0 ? even.push(key) : null;
+   })
 
+   return even;
+}
 //Code Here
 
 
@@ -92,7 +116,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an array with the first item in the array being the evens array (all the even values from numbersArray)
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
+function divider(numbersArray){
 
+    let arr = [];
+    let even = [];
+    let odd = [];
+
+    numbersArray.forEach(function(key){
+         key % 2 === 0 ? even.push(key) : odd.push(key); 
+    })
+
+    arr.push(even);
+    arr.push(odd);
+
+    return arr;
+}
 //Code Here
 
 
@@ -114,7 +152,15 @@ var getRandomArbitrary = function() {
   Loop through the array to see if randomNumber is in the array.
   If it is, return true, if it's not, return false
 */
+function finder(arr){
+  let active  = false;
+  let randomNumber = getRandomArbitrary();
+  arr.forEach(function(key){
+      randomNumber === key ? active = true: null;
+  })
 
+  return active;
+}
 //Code Here
 
 
@@ -144,6 +190,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
+function removeItem(myGroceryList,item){
+  if(!myGroceryList || !item) return [];
+    myGroceryList.forEach(function(key){
+       if(key === item){
+         myGroceryList = myGroceryList.filter(prod => prod !== key);
+       }
+    })
+
+    return myGroceryList;
+}
+
+
+
+function addItem(myGroceryList,item){
+
+    if(!myGroceryList || !item) return [];
+       myGroceryList.push(item);
+    return myGroceryList;
+}
+
 //Code Here
 
 
@@ -153,7 +219,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
+function maker () {
 
+   let make = [];
+   for(let i=1;i<216;i++){
+      make.push(i);
+   }
+
+   return make;
+}
 //Code Here
 
 
@@ -169,7 +243,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Return a new array after adding ten to each item in numbers.
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
-
+function addTen(numbers){
+   numbers.forEach(function(key){
+      let index = numbers.indexOf(key);
+      key = Number(key);
+      key+=10;
+      numbers[index] = key;
+   })
+   console.log(numbers);
+   return numbers;
+}
 //Code Here
 
 
@@ -194,7 +277,14 @@ for(var i = 0; i < num2; i++){
   Write a function called 'longer' that is given arr1 and arr2 as it's only arguments.
   Return the longer of the two arrays.
 */
+function longer(arr1,arr2){
+   if(arr1.length > arr2.length)
+   {
+     return arr1;
+   }
 
+   else return arr2;
+}
 //Code Here
 
 
@@ -206,7 +296,16 @@ for(var i = 0; i < num2; i++){
 
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
+function both(arr1,arr2){
+  let numArr = [];
+  arr1.forEach(function(key){
+       arr2.forEach(function(key2){
+           key === key2 ? numArr.push(key) : null;
+       })
+  })
 
+  return numArr;
+}
 //Code Here
 
 
@@ -247,6 +346,8 @@ var tom = {
   After that console.log the length of the Array and make sure that it's equal to 4.
 */
 
+employees.push(joe,jim,ryan,tom);
+employees = employees.filter(pos => pos.name !== "Jim"); 
 //Code Here
 
 
@@ -255,6 +356,8 @@ var tom = {
   Now let's say Jim has to take a leave of absence.
   Loop through your employees until you find jim, then remove him from the array.
 */
+
+
 
 //Code Here
 
@@ -267,7 +370,7 @@ var tom = {
   A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects) of data is to have an array full of objects.
   Create an empty array called users.
 */
-
+let users = [];
 //Code Here
 
 
@@ -286,7 +389,28 @@ var user1 = {
     username: 'ihazcode'
 };
 // Do not edit the code above.
+var userx = {
+  name: 'Red Brown',
+  email: 'rb@boom.camp',
+  password: 'brownred',
+  username: 'bredrown',
+};
 
+var usery = {
+  name: 'Green Light',
+  email: 'greenlight@boom.camp',
+  password: 'grenl16ht',
+  username: 'grinlicht'
+};
+
+var userz = {
+  name: 'Orange Red',
+  email: 'orangered@boom.camp',
+  password: 'orangered',
+  username: 'oread'
+};
+
+users.push(userx,usery,userz);
 //Code Here
 
 
