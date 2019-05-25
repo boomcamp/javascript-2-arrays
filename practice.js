@@ -147,15 +147,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-function finder(numbers) {
+function finder(array) {
   var randomNumber = getRandomArbitrary();
-  for (i = 0; i < numbers.length; i++){
-    if (i === randomNumber){
-      return true;
-    }
+  var checker = true;
+
+  for (value of array) {
+    checker = ((value == randomNumber) ? true : false);
   }
-      return false;
+
+  return checker;
 }
 
 
@@ -187,7 +187,31 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  var array = [];
 
+    if(myGroceryList && item){
+     myGroceryList.splice(myGroceryList.indexOf(item),1);
+     return myGroceryList;
+    }else{
+      return array;
+    }
+
+}
+
+function addItem(myGroceryList, item){
+  var array2 = [];
+    if(myGroceryList && item){
+     myGroceryList.push(item);
+     return myGroceryList;
+    }else{
+       return array2;
+    }
+
+
+}
+removeItem(myGroceryList, 'chips');
+addItem(myGroceryList, 'Jerky');
 
 
 ////////// PROBLEM 9 //////////
@@ -197,7 +221,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var array = [];
+  for(i = 1; i <= 215; i++){
+    array.push(i);
+  }
+  return array;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -213,7 +243,18 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
-
+function addTen(numbers){
+  array = [];
+  for(value of numbers){
+    if(!isNaN(value)){
+     temp = Number(value);
+    }else{
+     temp = value;
+    }
+    array.push(temp + 10);
+  }
+  return array;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -238,7 +279,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -250,7 +297,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  arr = [];
+  for(value of arr1){
+    for(value2 of arr2){
+      if(value == value2){
+        arr.push(value);
+      }
+    }
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 12 //////////
