@@ -255,7 +255,6 @@ function addTen(numbers) {
         numbers[i] += 10;
 
     }
-    console.log(numbers)
     return numbers;
 
 
@@ -286,7 +285,6 @@ for (var i = 0; i < num2; i++) {
   Write a function called 'longer' that is given arr1 and arr2 as it's only arguments.
   Return the longer of the two arrays.
 */
-longer(arr1, arr2);
 
 function longer(arr1, arr2) {
     var newArray = [];
@@ -309,8 +307,21 @@ both(arr1, arr2);
 
 function both(arr1, arr2) {
     var SameElem = new Array();
-    var newArr1 = arr1.includes(arr2);
-    var newArr2 = arr2.includes(arr1);
+    var toUse = 0;
+    if (arr1.length > arr2.length){
+      toUse = arr1.length;
+    } else {
+      toUse = arr2.length;
+    }
+    
+    for (i=0;i<4;i++){
+     for (j=0;j<4;j++){
+       if (arr1[i]===arr2[j]){
+         SameElem.push(arr1[i]);
+       }
+     }
+    }
+
     return SameElem;
 }
 
