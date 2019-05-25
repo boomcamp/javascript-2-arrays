@@ -142,18 +142,12 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 function finder(numbers){
   let randomNumber = getRandomArbitrary();
-  // console.log(randomNumber)
   var found = numbers.find(function(element) {
    return element === randomNumber;
-});
-if(found == undefined){
-  return false;
-}else{
-  return true;
-}
+  });
+return found ? true:false;
 }
 ////////// PROBLEM 8 //////////
 
