@@ -195,7 +195,32 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if (myGroceryList && item) {
+    for (var i=0; i < myGroceryList.length; i++) {
+      if (myGroceryList[i] === item) {
+        myGroceryList.splice(i, 1);
+      }
+    }
+  }
+  else {
+    return [];
+  }  
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item) {
+  if (myGroceryList && item) {
+      myGroceryList.push(item);
+  }
+  else {
+    return [];
+  }  
+  return myGroceryList;
+}
+
+removeItem(myGroceryList, 'pizza');
+addItem(myGroceryList, 'cake')
 
 
 
@@ -229,9 +254,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 function addTen(numbers) {
-
+ var newArr = [];
+ for (let i=0; i<numbers.length; i++) {
+   numbers = numbers.map(Number);
+   newArr.push(numbers[i] + 10);
+ }
+ return newArr;
 }
-
+addTen(numbers);
 
 ////////// PROBLEM 11 //////////
 
@@ -327,8 +357,7 @@ var tom = {
 
 //Code Here
   employees = [joe, jim, ryan, tom];
-
-  
+ 
 
 
 /*
@@ -337,7 +366,11 @@ var tom = {
 */
 
 //Code Here
-
+for( var i = 0; i < employees.length; i++){ 
+  if ( employees[i].name === 'Jim') {
+    employees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -403,7 +436,12 @@ var user4 = {
 */
 
 //Code Here
-
+users = [user1, user2, user3, user4];
+for( var i = 0; i < users.length; i++){ 
+  if ( users[i].email === 'mark@boom.camp') {
+    users.splice(i, 1);
+  }
+}
 
 
 /*
