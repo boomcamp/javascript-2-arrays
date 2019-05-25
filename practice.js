@@ -354,9 +354,8 @@ function both(arr1,arr2){
   */
 
   //Code Here
-  let removed = employees.splice(1,1);
-
-
+  let absent = employees.find(emp => emp.name === 'Jim');
+  employees.splice(employees.indexOf(absent),1);
 
 ////////// PROBLEM 13 //////////
 
