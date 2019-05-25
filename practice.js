@@ -17,9 +17,10 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
-
-
+function first(arr) {
+  return arr[0]
+    }
+  first(arr)
 
 ////////// PROBLEM 2 //////////
 
@@ -32,9 +33,10 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
-
-
+function last(arr) {
+  return arr[2]
+    }
+  last(arr)
 
 ////////// PROBLEM 3 //////////
 
@@ -47,9 +49,13 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
-
-
+function looper(family) {
+  for (var i = 0; i < family.length; i++) {
+    alert(family[i])
+  }
+  console.log(family)
+}
+looper(family)
 
 ////////// PROBLEM 4 //////////
 
@@ -62,9 +68,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
-
-
+function reversedLooper(letters) {
+  for (var i = letters.length - 1; i >= 0; i--) {
+    alert(letters[i])
+      console.log(letters[i])
+  }
+} 
+  reversedLooper(letters)
 
 ////////// PROBLEM 5 //////////
 
@@ -77,9 +87,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
-
-
+function evenFinder(nums) {
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 !== 0){
+    delete nums[i];
+    }
+  }
+  return nums
+}
+  evenFinder(nums)
 
 ////////// PROBLEM 6 //////////
 
@@ -93,9 +109,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
-
-
+function divider(numbersArray) {
+	let evenNumsOddNums = [[],[]]
+	  for (var i = 0; i < numbersArray.length; i++) {
+	    if (numbersArray[i] % 2 === 0){
+	      evenNumsOddNums[0].push(numbersArray[i])
+    	} else {
+	      evenNumsOddNums[1].push(numbersArray[i])
+	}
+}
+return evenNumsOddNums; 
+}
+divider(numbersArray)
 
 ////////// PROBLEM 7 //////////
 
@@ -144,9 +169,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
-
-
+var removeItem = (myGroceryList, target) => {
+  if (myGroceryList.indexOf(target) >= 0) {
+    myGroceryList.splice(myGroceryList.indexOf(target), 1);
+    return myGroceryList;
+  }
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -154,9 +182,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
-
+var maker = function() {
+	var newArr = [];
+	for(var i = 1; i < 215; i++) {
+		newArr.push(i);
+	}
+		return newArr;
+}
+maker()
 
 ////////// PROBLEM 10 //////////
 
@@ -170,9 +203,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
 
-//Code Here
+function addTen(arr) {
+  var numberfied = [];
+  for (var x = 0; x<arr.length; x++) {
+    numberfied.push(Number(arr[x]));
+    numberfied[x] += 10;
+  }
+  return numberfied;
+}
 
-
+addTen(numbers);
 
 ////////// PROBLEM 11 //////////
 
@@ -258,8 +298,6 @@ var tom = {
 
 //Code Here
 
-
-
 ////////// PROBLEM 13 //////////
 
 
@@ -268,7 +306,7 @@ var tom = {
   Create an empty array called users.
 */
 
-//Code Here
+var users = []; 
 
 
 
@@ -287,9 +325,26 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+  name: 'Bruno Sheeeran',
+  email: 'bruno.sheran@gmail.com',
+  password: 'pass1',
+  username: 'user1'
+};
 
+var user3 = {
+  name: 'Melanie Lavigne',
+  email: 'mel.lavigne@gmail.com',
+  password: 'pass2',
+  username: 'user2'
+};
 
+var user4 = {
+  name: 'Crabby Patty',
+  email: 'crabby.patty@gmail.com',
+  password: 'pass3',
+  username: 'user3'
+};
 
 /*
   Now you have a very common data structure.
@@ -301,7 +356,7 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
+
 
 
 
