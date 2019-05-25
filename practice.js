@@ -89,7 +89,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 function evenFinder(nums) {
   for (var i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 !== 0){
+    if (nums[i] % 2 !== 0) {
     delete nums[i];
     }
   }
@@ -112,7 +112,7 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 function divider(numbersArray) {
 	let evenNumsOddNums = [[],[]]
 	  for (var i = 0; i < numbersArray.length; i++) {
-	    if (numbersArray[i] % 2 === 0){
+	    if (numbersArray[i] % 2 === 0) {
 	      evenNumsOddNums[0].push(numbersArray[i])
     	} else {
 	      evenNumsOddNums[1].push(numbersArray[i])
@@ -140,9 +140,20 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
-
-
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+	function finder(numbers) {
+		let randomNumber = getRandomArbitrary();
+		console.log(randomNumber)
+	var found = numbers.find(function(element) {
+		return element === randomNumber;
+});
+	if(found == undefined) {
+		return false;
+	}
+	else {
+  return true;
+	}
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -235,9 +246,13 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
-
-
+function longer(arr1, arr2) {
+  if(arr1.length<arr2.length) {
+    return arr2;
+  }else{
+    return arr1;
+  }
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -247,9 +262,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
-
-
+function both(arr1,arr2) {
+  same = [];
+  for(nums1 of arr1) {
+    for(nums2 of arr2) {
+      if(nums1 == nums2) {
+        same.push(nums1);
+      }
+    }
+  }
+  return same;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -287,9 +310,8 @@ var tom = {
   After that console.log the length of the Array and make sure that it's equal to 4.
 */
 
-//Code Here
-
-
+employees.push(joe, jim, ryan, tom);
+  console.log(employees.length);
 
 /*
   Now let's say Jim has to take a leave of absence.
@@ -307,8 +329,6 @@ var tom = {
 */
 
 var users = []; 
-
-
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -356,9 +376,7 @@ var user4 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-
-
-
+//Code Here
 
 /*
   The activity we just did is very much how data works in 'the real world'.
