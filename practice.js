@@ -303,7 +303,6 @@ function longer(arr1, arr2) {
 
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
-both(arr1, arr2);
 
 function both(arr1, arr2) {
     var SameElem = new Array();
@@ -392,8 +391,11 @@ for (var i = 0; i < employees.length; i++) {
   Create an empty array called users.
 */
 
-var users = [];
-
+let user = function(name,email,password,username){
+  return{
+    name,email,password,username,
+  }
+}
 
 
 /*
@@ -401,6 +403,16 @@ var users = [];
 
   Include the following user1 object as one of the objects in your array.
 */
+
+
+let users = [
+  user('kojiadriano','rolando.adriano@boom.camp','hackerman','hackerman00'),
+  user('person2','email@email.com','passkey','person00'),
+  user('person3','email3@email.com','passkey','hackerman2'),
+];
+
+
+
 
 // Do not edit the code below.
 var user1 = {
@@ -410,8 +422,7 @@ var user1 = {
     username: 'ihazcode'
 };
 // Do not edit the code above.
-
-
+users.push(user(user1.name,user1.email,user1.password,user1.username));
 
 /*
   Now you have a very common data structure.
@@ -423,8 +434,12 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
 
+for (val of users){
+  if (val.email == 'mark@boom.camp'){
+   users.pop();
+  }
+}
 
 
 /*
