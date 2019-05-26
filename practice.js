@@ -246,8 +246,6 @@ function maker(){
 }
 
 
-
-
 ////////// PROBLEM 10 //////////
 
 // Do not edit the code below.
