@@ -23,6 +23,7 @@ function first(arr){
   return arr[0];
 }
 
+
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
