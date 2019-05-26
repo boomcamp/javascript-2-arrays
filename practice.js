@@ -23,8 +23,6 @@ function first(arr){
   return arr[0];
 }
 
-
-
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -41,8 +39,6 @@ var arr = [40,50,60];
 function last(arr){
   return arr[arr.length-1]
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -64,8 +60,6 @@ function looper(family){
 }
 
 
-
-
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -84,7 +78,6 @@ function reversedLooper(letters){
     alert(letters[i]);
   }
 }
-
 
 
 ////////// PROBLEM 5 //////////
