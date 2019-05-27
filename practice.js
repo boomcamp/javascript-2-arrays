@@ -89,7 +89,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 function evenFinder(nums) {
   for (var i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 !== 0) {
+    if (nums[i] % 2 !== 0){
     delete nums[i];
     }
   }
@@ -112,7 +112,7 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 function divider(numbersArray) {
 	let evenNumsOddNums = [[],[]]
 	  for (var i = 0; i < numbersArray.length; i++) {
-	    if (numbersArray[i] % 2 === 0) {
+	    if (numbersArray[i] % 2 === 0){
 	      evenNumsOddNums[0].push(numbersArray[i])
     	} else {
 	      evenNumsOddNums[1].push(numbersArray[i])
