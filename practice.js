@@ -17,7 +17,9 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+function first(arr){
+    return arr[0];
+}
 
 
 
@@ -32,7 +34,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+function last(arr){
+    return arr[2];
+}
 
 
 
@@ -47,7 +51,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
+function looper(family){
+    for(let i=0; i<family.length; i++ ){
+        alert(family[i]);
+    }
+}
 
 
 
@@ -62,7 +70,14 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
+  function reversedLooper(letters){
+
+    for ( let j=letters.length-1; j>=0; j--) {
+
+      alert(letters[j]);
+
+    }
+  }
 
 
 
@@ -77,8 +92,18 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
 
+let evenFinder = function(nums){
+  let even = [];
+  nums.forEach(EvenNumber => {
+    if(EvenNumber % 2 == 0){
+      even.push(EvenNumber);
+    }
+  }
+  );
+  return even;
+ 
+ }
 
 
 ////////// PROBLEM 6 //////////
@@ -93,7 +118,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  let even = numbersArray.filter(
+  function(EvenNum){
+    return EvenNum % 2 === 0;
+   }
+  );
+  let odd = numbersArray.filter(
+  function(OddNum){
+      return OddNum % 2 !== 0;
+    }
+  );
+     return [even,odd];
+  }
 
 
 
@@ -103,6 +140,7 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
+
 // Do not edit the code above.
 
 /*
@@ -115,9 +153,17 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(array) {
+  var result = false;
+  var randomNumber = getRandomArbitrary();
+  array.forEach(function(ran) {
+    if(ran === randomNumber) { result = true;}
 
+  });
+  return result;
+}
 
+console.log(finder(numbers));
 
 ////////// PROBLEM 8 //////////
 
@@ -144,7 +190,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+
+function removeItem(myGroceryList, item) {
+  if( Array.isArray(myGroceryList) && item!==null) {
+  var index = myGroceryList.indexOf(item);
+  myGroceryList.splice(index,1);
+
+  return myGroceryList;  
+  } else {
+    return [];
+  }
+
+}
+removeItem(myGroceryList,'pixxa');
+function addItem(myGroceryList, item) {
+
+if(Array.isArray(myGroceryList) && item!=null) {
+  myGroceryList.push(item);
+  return myGroceryList; }
+  else {
+    return [];
+  }
+}
+
 
 
 
@@ -154,8 +222,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
+function maker() {
+  var newArr = [];
+  for(i=1;i<216;i++)  {
+    newArr.push(i);
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -170,7 +243,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
 
-//Code Here
+function addTen(numbers) {
+  var newNum = [];
+  numbers.forEach(function(num){
+    var a = parseInt(num);
+    newNum.push((a+10*1)
+);
+
+  })
+  return newNum;
+}
 
 
 
@@ -268,7 +350,7 @@ var tom = {
   Create an empty array called users.
 */
 
-//Code Here
+var users = [];
 
 
 
@@ -279,7 +361,7 @@ var tom = {
 */
 
 // Do not edit the code below.
-var user1 = {
+  var user1 = {
     name: 'Mark Mouser',
     email: 'mark@boom.camp',
     password: 'hunter2',
@@ -287,9 +369,22 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+ var user2 ={
+      name: 'Kathy Matriz',
+      email: 'kathy@boom.camp',
+      password: 'Kathy',
+      username: 'Kathy'
+  };
+  var user3 ={
+    name: 'Vincent Navas',
+    email: 'vincent@boom.camp',
+    password: 'vincent',
+    username: 'vincent'
+  };
 
-
+  users.push(user1);
+  users.push(user2);
+  users.push(user3);
 
 /*
   Now you have a very common data structure.
