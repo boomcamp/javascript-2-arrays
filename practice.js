@@ -192,18 +192,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Code Here
 
 function removeItem(myGroceryList, item){
-  
-  return myGroceryList.filter(function(listItem){
-    return listItem !== item;
-  });
+ 
+  var index = myGroceryList.indexOf(item);
+
+  if(index > -1) {
+    myGroceryList.splice(index, 1);
+  }
+
+  return myGroceryList;
+
+}
+removeItem(myGroceryList, 'pizza')
+
+function addItem(myGroceryList, item) {
+
+  myGroceryList.splice(1, 0, item);
+
+  return myGroceryList;
 }
 
-function addItem(myGroceryList,item){
-
-  newArr =  myGroceryList.push(item);
-  return newArr;
-}
-
+addItem(myGroceryList, 'Jerky')
 
 
 
@@ -276,9 +284,15 @@ for (var i = 0; i < num2; i++) {
 
 //Code Here
 function longer(arr1, arr2){
+
+  if (arr1.length > arr2.length) {    
+    return arr1;
+  }
+  
+    return arr2;
+  
   
 }
-
 
 
 /*
@@ -289,8 +303,10 @@ function longer(arr1, arr2){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
-
+//Code Here 
+function both(arr1, arr2) {
+  return arr1, arr2;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -341,12 +357,20 @@ console.log(employees.length);
 
 //Code Here
 
-employees.forEach(function(element, index, array){
+function rmJim(employees, item){
+ 
+  var index = employees.indexOf(item);
 
-  if (element.name === "jim") {
-  	array.splice(index,1);
+  if(index > -1) {
+    employees.splice(index, 1);
   }
-})
+
+  return employees;
+
+}
+
+rmJim(employees, 'jim')
+
 
 
 
@@ -379,6 +403,24 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Mark Mouser',
+  email: 'mark@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+var user3 = {
+  name: 'Mark Mouser',
+  email: 'mark@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+var user4 = {
+  name: 'Mark Mouser',
+  email: 'mark@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
 
 
 
