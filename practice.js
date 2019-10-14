@@ -48,8 +48,8 @@ var family = ["Aodhan", "Haley", "Finn", "Reid"];
 */
 
 function looper(family) {
-   for (let i = 0; i < 3; i++) {
-      alert(family[i]);
+   for (val of family) {
+      alert(val);
    }
 }
 
@@ -65,8 +65,8 @@ var letters = ["A", "B", "C", "D", "E"];
 */
 
 function reversedLooper(letters) {
-   for (let i = letters.length - 1; i >= 0; i--) {
-      alert(letters[i]);
+   for (val of letters.slice(0).reverse()) {
+      alert(val);
    }
 }
 
@@ -81,14 +81,14 @@ var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
   Return an array that contains the even numbers from the nums array.
 */
 
+var evenArr = [];
 function evenFinder(nums) {
-   let arr = [];
-   for (let i = 0; i < nums.length; i++) {
-      if (nums[i] % 2 === 0) {
-         arr.push(nums[i]);
+   for (val of nums) {
+      if (val % 2 == 0) {
+         evenArr.push(val);
       }
    }
-   return arr;
+   return evenArr;
 }
 
 ////////// PROBLEM 6 //////////
@@ -104,20 +104,17 @@ var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 */
 
 function divider(numbersArray) {
-   var evenNumbers = [],
-      oddNumbers = [];
-   for (i = 0; i < numbersArray.length; i++) {
-      let modul = numbersArray[i] % 2;
-      if (modul == 0) {
-         evenNumbers.push(numbersArray[i]);
+   var newArr = [[], []];
+
+   for (val of numbersArray) {
+      if (val % 2 == 0) {
+         newArr[0].push(val);
       } else {
-         oddNumbers.push(numbersArray[i]);
+         newArr[1].push(val);
       }
    }
-   even = [evenNumbers];
-   odd = [oddNumbers];
 
-   return [].concat(even).concat(odd);
+   return newArr;
 }
 
 ////////// PROBLEM 7 //////////
@@ -141,16 +138,14 @@ var getRandomArbitrary = function() {
 var numbers = [0, 3, 4, 5, 6, 7, 9, 14, 17, 24, 25, 26, 29, 30];
 function finder(array) {
    var randomNumber = getRandomArbitrary();
-   console.log(randomNumber);
-   for (i = 0; i < array.length; i++) {
-      if (array[i] == randomNumber) {
-         console.log(randomNumber);
-         return true;
-      }
+   var flag = true;
+
+   for (val of array) {
+      flag = val == randomNumber ? true : false;
    }
-   return false;
+
+   return flag;
 }
-finder(numbers);
 
 ////////// PROBLEM 8 //////////
 
@@ -177,31 +172,27 @@ var myGroceryList = ["chips", "pizza", "hotpockets", "MtnDew", "corndogs"];
   addItem() --> [];
 */
 
-function removeItem(myGroceryList, itemToRemove) {
-   if (itemToRemove) {
-      for (i = 0; i < myGroceryList.length; i++) {
-         if (myGroceryList[i] == itemToRemove) {
-            myGroceryList.splice(i, 1);
+function removeItem(myGroceryList, item) {
+   if (myGroceryList != undefined && item != undefined) {
+      for (value of myGroceryList) {
+         if (value == item) {
+            myGroceryList.splice(myGroceryList.indexOf(item), 1);
          }
       }
       return myGroceryList;
-   } else if (!itemToRemove) {
+   } else {
       return [];
    }
 }
 
-function addItem(myGroceryList, itemToAdd) {
-   if (itemToAdd) {
-      if (myGroceryList.indexOf(itemToAdd) == -1) {
-         myGroceryList.push(itemToAdd);
-      }
+function addItem(myGroceryList, item) {
+   if (myGroceryList != undefined && item != undefined) {
+      myGroceryList.push(item);
       return myGroceryList;
-   } else if (!itemToAdd) {
+   } else {
       return [];
    }
 }
-addItem(myGroceryList, "Jerky");
-
 ////////// PROBLEM 9 //////////
 
 /*
@@ -229,13 +220,21 @@ var numbers = [5, "9", 16, 19, "25", "34", 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
 
+addTen(numbers);
+
 function addTen(numbers) {
-   for (i = 0; i < numbers.length; i++) {
-      numbers[i] = Number(numbers[i]) + 10;
+   var newArr = [];
+
+   for (value of numbers) {
+      if (typeof value == "string") {
+         var integer = parseInt(value, 10);
+         newArr.push(integer + 10);
+      } else {
+         newArr.push(value + 10);
+      }
    }
-   return numbers;
+   return newArr;
 }
-console.log(addTen(numbers));
 
 ////////// PROBLEM 11 //////////
 
@@ -381,12 +380,13 @@ var user3 = {
    username: "lyzamae"
 };
 
-var user4 = {
-   name: "Marcial Norte",
-   email: "marcial@boom.camp",
-   password: "marcial22",
-   username: "marcial"
-};
+function fillUser(user) {
+   return {
+      user
+   };
+}
+
+users = [fillUser(user1), fillUser(user2), fillUser(user3)];
 
 /*
   Now you have a very common data structure.
@@ -398,10 +398,11 @@ var user4 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-users = [].concat(user1).concat(user2);
-var users = users.filter(function(elem) {
-   return elem.email != "mark@boom.camp";
-});
+for (i in users) {
+   if (users[i].user.name == "mark@boom.camp") {
+      users.splice(users.indexOf(users[i].user.name), 1);
+   }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
