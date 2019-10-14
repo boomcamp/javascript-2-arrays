@@ -393,7 +393,11 @@ users.push(user2, user3);
 */
 
 //Code Here
-
+for (let i = 0; i < users.length; i++) {
+  if (users[i].email == "mark@boom.camp") {
+    users.splice(i, 1);
+  }
+}
 /*
 
   The activity we just did is very much how data works in 'the real world'.
