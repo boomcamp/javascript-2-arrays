@@ -53,8 +53,8 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 //Code Here
 function looper(family){
-  for(i = 0; i < 3; i++){
-    alert(family[i]);
+  for(fam of family){
+    alert(fam);
   }
 }
 
@@ -72,8 +72,8 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 function reversedLooper(letters) {
-  for (i = letters.length - 1; i >= 0; i--) {
-     alert(letters[i]);
+  for (leta of letters.slice(0).reverse()) {
+     alert(leta);
   }
 }
 
@@ -92,10 +92,9 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Code Here
 function evenFinder(nums){
   var numbers = [];
-  for (i = 0; i < nums.length; i++) {
-    let modul = nums[i] % 2;
-     if(modul == 0){
-       numbers.push(nums[i]);
+  for (nm of nums) {
+     if(nm % 2 == 0){
+       numbers.push(nm);
        //alert(nums[i]);
      }
  }
@@ -118,14 +117,12 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 //Code Here
 function divider(numbersArray){
   var evenNumbers = [],
-      oddNumbers = [],
-      arrayOfArrays = [];
-  for (i = 0; i < numbersArray.length; i++) {
-    let modul = numbersArray[i] % 2;
-     if(modul == 0){
-      evenNumbers.push(numbersArray[i]);
+      oddNumbers = [];
+  for (numb of numbersArray) {
+     if(numb % 2 == 0){
+      evenNumbers.push(numb);
      }else{
-      oddNumbers.push(numbersArray[i]);
+      oddNumbers.push(numb);
      }
  }
  even = [evenNumbers];
@@ -140,6 +137,8 @@ var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
 // Do not edit the code above.
+
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 /*
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
@@ -153,10 +152,8 @@ var getRandomArbitrary = function() {
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 function finder(array){
   var randomNumber = getRandomArbitrary();
-  //console.log(randomNumber);
-  for(i = 0; i < array.length; i++){
-    if(array[i] == randomNumber){
-      //console.log(randomNumber);
+  for(arry of array){
+    if(arry == randomNumber){
       return true;
     }
   }
@@ -193,9 +190,9 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 var myGroceryList = [];
 function removeItem(myGroceryList, removeFromMyGroceryList){
   if(removeFromMyGroceryList){
-    for(i = 0; i < myGroceryList.length; i++){
-      if(myGroceryList[i] == removeFromMyGroceryList){
-        myGroceryList.splice(i, 1); 
+    for(item of myGroceryList){
+      if(item == removeFromMyGroceryList){
+        myGroceryList.splice(myGroceryList.indexOf(item), 1); 
       }
     }
     return myGroceryList;
@@ -249,10 +246,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Code Here
 
 function addTen(numbers){
-  for(i = 0; i < numbers.length; i++){
-    numbers[i] = Number(numbers[i]) + 10;
+  var newArray = [];
+  for (val of numbers) {
+    if ((typeof val) == 'string') {
+      var integer = parseInt(val, 10);
+      newArray.push(integer+10);
+    } else {
+      newArray.push(val+10);
+    }
   }
-  return numbers;
+  return newArray;
 }
 
 
@@ -299,10 +302,10 @@ function longer(arr1, arr2){
 
 function both(arr1, arr2){
   var numbers = [];
-  for(i = 0; i < arr1.length; i++){
-    for(j = 0; j < arr2.length; j++){
-      if(arr1[i] == arr2[j]){
-        numbers.push(arr1[i]);
+  for(arrone of arr1){
+    for(arrtwo of arr2){
+      if(arrone == arrtwo){
+        numbers.push(arrone);
       }
     }
   }
@@ -346,9 +349,20 @@ var tom = {
 */
 
 //Code Here
-var employees = [].concat([joe]).concat([jim]).concat([ryan]).concat([tom]);
-//console.log(employees.length);
-employees.splice(1, 1);
+function fillEmployee(employee) {
+  return {
+    employee
+  }
+}
+
+employees = [
+  fillEmployee(joe),
+  fillEmployee(jim),
+  fillEmployee(ryan),
+  fillEmployee(tom),
+];
+
+//console.log(employees);
 
 
 
@@ -358,9 +372,11 @@ employees.splice(1, 1);
 */
 
 //Code Here
-var employees = employees.filter(function(el) { return el.name != 'Jim'; }); 
-console.log(employees);
-
+for (ind in employees) {
+  if (employees[ind].employee.name == 'Jim') {
+   employees.splice(employees.indexOf(employees[ind].employee.name), 1);
+  }
+}
 
 ////////// PROBLEM 13 //////////
 
@@ -401,7 +417,17 @@ var user2 = {
   password: 'lanseu',
   username: 'lance'
 };
-users = [].concat(user1).concat(user2).concat(user3);
+function fillUser(user) {
+  return {
+    user
+  }
+}
+
+users = [
+  fillUser(user1),
+  fillUser(user2),
+  fillUser(user3),
+];
 
 // console.log(users);
 /*
@@ -415,7 +441,11 @@ users = [].concat(user1).concat(user2).concat(user3);
 */
 
 //Code Here
-var users = users.filter(function(el) { return el.email != 'mark@boom.camp'; }); 
+for (ind in users) {
+  if (users[ind].user.name == 'mark@boom.camp') {
+    users.splice(users.indexOf(users[ind].user.name), 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
