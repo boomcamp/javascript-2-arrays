@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[arr.length];
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family){
+  for(var i=0; i<=family.length; i++){
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for(var i=letters.length; i>=0; i--){
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+function evenFinder(nums){
+  for(var i=0; i<=nums.length; i++){
+    if(nums[i] % 2 != 0) {
+      nums.splice(nums.indexOf(nums[i]), 1)
+    }
+  }
 
+  return nums;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -94,7 +114,24 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(nums){
+  var even = [], odd = [], final_arr = [], j=0, k=0; 
 
+  for(var i=0; i<nums.length; i++){
+    if(nums[i] % 2 == 0) {
+      even[j] = nums[i];
+      j++
+    }
+    else{
+      odd[k] = nums[i];
+      k ++;
+    }
+  }
+  final_arr[0] = even;
+  final_arr[1] = odd;
+  
+  return final_arr;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -116,7 +153,12 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(array){
+  var randomNumber;
 
+  getRandomArbitrary(randomNumber);
+
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -145,7 +187,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  if(item === undefined){
+    return [];
+  }
+  for(var i=0; i<=myGroceryList.length; i++){
+    if(myGroceryList[i] === item){
+      myGroceryList.splice(myGroceryList.indexOf(myGroceryList[i]), 1);
+    }
+  }
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item){
+  if(item === undefined){
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -155,7 +215,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  for(var i=1; i<=215; i++){
+    arr[i] = i;
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -171,6 +236,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(numbers){
+  for(var i=0; i<=numbers.length; i++){
+    numbers[i] = numbers[i]+10;
+  }
+
+  return numbers;
+}
 
 
 
@@ -196,7 +268,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -208,7 +287,19 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  let k;
+  for(var i=0; i<=arr1.length; i++){
+    for(var j=i+1; i<=arr2.length; j++){
+      if(arr1[i] === arr2[j]){
+        newarr[k] = arr1[i]
+        k ++;
+      }
+    } 
+  }
 
+  return newarr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -248,6 +339,10 @@ var tom = {
 */
 
 //Code Here
+employees = [joe, jim, ryan, tom];
+
+console.log(employees.length);
+
 
 
 
@@ -257,7 +352,11 @@ var tom = {
 */
 
 //Code Here
-
+for(i=0; i<=employees.length ; i++){
+  if(employees[i] === "Jim"){
+    employees.splice(employees.indexOf(employees[i]), 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -269,7 +368,7 @@ var tom = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -288,7 +387,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Mark Mouser2',
+  email: 'mark@boom.camp2',
+  password: 'hunter22',
+  username: 'ihazcode2'
+};
 
+var user3 = {
+  name: 'Mark Mouser3',
+  email: 'mark@boom.camp3',
+  password: 'hunter23',
+  username: 'ihazcode3'
+};
+
+users = [user1, user2, user3];
 
 
 /*
@@ -302,7 +415,11 @@ var user1 = {
 */
 
 //Code Here
-
+for(i=0; i<=users.length ; i++){
+  if(users[i].email === "mark@boom.camp"){
+    users.splice(users.indexOf(users[i]), 1);
+  }
+}
 
 
 /*
