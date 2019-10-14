@@ -131,7 +131,7 @@ function divider(numbersArray){
       arr1[b1]=numbersArray[a]
       b1++
     }else{
-      arr2[b1]=numbersArray[a]
+      arr2[b2]=numbersArray[a]
       b2++
     }
   }
