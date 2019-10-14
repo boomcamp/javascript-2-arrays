@@ -36,7 +36,7 @@ var arr = [40,50,60];
 
 //Code Here
 function last(arr){
-  return arr[arr.length];
+  return arr[arr.length-1];
 }
 
 
@@ -53,7 +53,7 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 //Code Here
 function looper(family){
-  for(var i=0; i<=family.length; i++){
+  for(var i=0; i<family.length; i++){
     alert(family[i]);
   }
 }
@@ -72,7 +72,7 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 function reversedLooper(letters){
-  for(var i=letters.length; i>=0; i--){
+  for(var i=letters.length-1; i>=0; i--){
     alert(letters[i]);
   }
 }
@@ -90,16 +90,16 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-function evenFinder(nums){
-  for(var i=0; i<=nums.length; i++){
-    if(nums[i] % 2 != 0) {
-      nums.splice(nums.indexOf(nums[i]), 1)
+function evenFinder(nums){ 
+  for(var i=0; i<nums.length; i++){
+    if(nums[i] % 2 !== 0) {
+      nums.splice(nums.indexOf(nums[i]), 1);
+      i --;
     }
-  }
 
+  }
   return nums;
 }
-
 
 ////////// PROBLEM 6 //////////
 
@@ -154,10 +154,14 @@ var getRandomArbitrary = function() {
 
 //Code Here
 function finder(array){
-  var randomNumber;
-
-  getRandomArbitrary(randomNumber);
-
+  var randomNumber = getRandomArbitrary();
+  for(var i=0; i<array.length; i++){
+    console.log(randomNumber + " " + array[i])
+    if(array[i] == randomNumber){
+      return true;
+    }    
+  }
+  return false;
 }
 
 
@@ -216,12 +220,12 @@ function addItem(myGroceryList, item){
 
 //Code Here
 function maker(){
-  for(var i=1; i<=215; i++){
-    arr[i] = i;
+  var arr=[]; 
+  for(var i=0; i<215; i++){
+    arr[i] = i+1;
   }
   return arr;
 }
-
 
 ////////// PROBLEM 10 //////////
 
@@ -237,13 +241,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 function addTen(numbers){
-  for(var i=0; i<=numbers.length; i++){
+  var numbers = numbers.map(Number);
+  for(var i=0; i<numbers.length; i++){
     numbers[i] = numbers[i]+10;
   }
 
   return numbers;
 }
-
 
 
 ////////// PROBLEM 11 //////////
@@ -288,11 +292,11 @@ function longer(arr1, arr2){
 
 //Code Here
 function both(arr1, arr2){
-  let k;
+  let k=0, newarr=[];
   for(var i=0; i<=arr1.length; i++){
-    for(var j=i+1; i<=arr2.length; j++){
-      if(arr1[i] === arr2[j]){
-        newarr[k] = arr1[i]
+    for(var j=0; j<arr2.length; j++){
+      if(arr1[i] == arr2[j]){
+        newarr[k] = arr1[i];
         k ++;
       }
     } 
@@ -344,16 +348,14 @@ employees = [joe, jim, ryan, tom];
 console.log(employees.length);
 
 
-
-
 /*
   Now let's say Jim has to take a leave of absence.
   Loop through your employees until you find jim, then remove him from the array.
 */
 
 //Code Here
-for(i=0; i<=employees.length ; i++){
-  if(employees[i] === "Jim"){
+for(i=0; i<employees.length; i++){
+  if(employees[i]['name'] === "Jim"){
     employees.splice(employees.indexOf(employees[i]), 1);
   }
 }
@@ -388,20 +390,21 @@ var user1 = {
 
 //Code Here
 var user2 = {
-  name: 'Mark Mouser2',
-  email: 'mark@boom.camp2',
-  password: 'hunter22',
-  username: 'ihazcode2'
+  name: 'John Doe',
+  email: 'john@boom.camp',
+  password: 'johnpass',
+  username: 'johndoe'
 };
 
 var user3 = {
-  name: 'Mark Mouser3',
-  email: 'mark@boom.camp3',
-  password: 'hunter23',
-  username: 'ihazcode3'
+  name: 'Jane Doe',
+  email: 'jane@boom.camp',
+  password: 'janepass',
+  username: 'janedoe'
 };
 
 users = [user1, user2, user3];
+
 
 
 /*
@@ -415,11 +418,12 @@ users = [user1, user2, user3];
 */
 
 //Code Here
-for(i=0; i<=users.length ; i++){
-  if(users[i].email === "mark@boom.camp"){
+for(i=0; i<users.length; i++){
+  if(users[i]['email'] === "mark@boom.camp"){
     users.splice(users.indexOf(users[i]), 1);
   }
 }
+
 
 
 /*
