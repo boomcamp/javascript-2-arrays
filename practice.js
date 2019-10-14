@@ -19,6 +19,11 @@ var arr = [10,20,30];
 
 //Code Here
 
+function first (arr){
+  console.log(arr.length);
+  return(arr[0]);
+
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,6 +38,11 @@ var arr = [40,50,60];
 */
 
 //Code Here
+
+function last (arr){
+  console.log(arr.length);
+  return(arr[arr.length-1])
+}
 
 
 
@@ -49,6 +59,14 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 //Code Here
 
+function looper (family){
+  for (var i = 0; i < family.length; i++) {
+    console.log(family[i]);
+    alert(family[i]);
+}
+    
+}
+
 
 
 ////////// PROBLEM 4 //////////
@@ -63,6 +81,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+
+function reversedLooper (letters){
+  for (var x = letters.length - 1; x >= 0; x--) {
+    console.log(letters[x]);
+    alert(letters[x]);
+}
+}
 
 
 
@@ -79,6 +104,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 
+function evenFinder (nums){
+  b = [];
+
+  for (var i = 0; i < nums.length; ++i) { 
+    if ((nums[i] % 2) === 0) {
+        b.push(nums[i]);
+}
+  }
+  return b;
+}
+
 
 
 ////////// PROBLEM 6 //////////
@@ -94,6 +130,28 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+
+function divider(numbersArray){
+var x1 = 0
+var x2 = 0
+var ray1 = new Array()
+var ray2 = new Array()
+  for(n=0;n<numbersArray.length;n++)
+  if (numbersArray[n] % 2 === 0) {
+    ray1[x1]=numbersArray[n]
+    x1+=1
+    
+}
+else {
+  ray2[x2]=numbersArray[n]
+  x2+=1
+}
+
+ return [ray1, ray2]
+}
+
+
+
 
 
 
@@ -116,6 +174,17 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+
+function finder (arr){
+  var randomNumber = getRandomArbitrary()
+  for(x in arr){
+    if(randomNumber==arr[x]){
+    return true
+  }
+  
+  }
+  return false
+}
 
 
 
@@ -146,6 +215,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function removeItem (myGroceryList, item){
+  if(item){
+    for(x in myGroceryList){
+      if(item==myGroceryList[x]){
+        myGroceryList.splice(x, 1)
+        return myGroceryList
+      }
+    }
+    return myGroceryList
+    }else{ 
+      return[]
+  }
+}
+
+function addItem (myGroceryList, item){
+  if(item){
+    myGroceryList.push(item)
+    return myGroceryList
+    }else{
+      return []
+  }
+}
+
+
 
 
 ////////// PROBLEM 9 //////////
@@ -155,6 +248,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+
+function maker (){
+  var emp = new Array();
+  for(x=0; x<215;x++){
+    emp[x] = x+1;
+  }
+  return emp
+}
+
 
 
 
@@ -171,6 +273,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+
+function addTen (numbers){
+  for(x = 0; x < numbers.length; x++){
+    numbers[x] = parseInt(numbers[x]) + 10;
+  }
+  return numbers
+}
 
 
 
@@ -197,6 +306,14 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+function longer(arr1, arr2){
+  if(arr2.length<arr1.length){
+  return arr1
+}else{
+  return arr2
+}
+}
+
 
 
 /*
@@ -208,6 +325,16 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+
+function both (arr1, arr2){
+ 
+  var newArray = arr1.filter(function(val) {
+    return arr2.indexOf(val) != -1;
+  });
+  
+  return(newArray)
+  
+}
 
 
 
@@ -249,7 +376,11 @@ var tom = {
 
 //Code Here
 
-
+employees.push(joe);
+employees.push(jim);
+employees.push(ryan);
+employees.push(tom);
+console.log(employees.length);
 
 /*
   Now let's say Jim has to take a leave of absence.
@@ -258,6 +389,7 @@ var tom = {
 
 //Code Here
 
+employees.splice(1, 1);
 
 
 ////////// PROBLEM 13 //////////
@@ -270,7 +402,7 @@ var tom = {
 
 //Code Here
 
-
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -289,6 +421,29 @@ var user1 = {
 
 //Code Here
 
+var user1 = {
+  name: 'Mark Mouser',
+  email: 'mark@boom.camp',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
+
+var user2 = {
+  name: 'Micky Mouser',
+  email: 'micky@boom.camp',
+  password: 'hunter23',
+  username: 'ihazcode1'
+};
+
+var user3 = {
+  name: 'Minny Mouser',
+  email: 'micky@boom.camp',
+  password: 'hunter24',
+  username: 'ihazcode2'
+};
+
+users.push(user1, user2, user3);
+
 
 
 /*
@@ -302,6 +457,14 @@ var user1 = {
 */
 
 //Code Here
+
+for(x=0;x<users.length;x++){
+  if (users[x].email=="mark@boom.camp"){
+    users.splice(x, 1)
+  
+  }
+}
+
 
 
 
