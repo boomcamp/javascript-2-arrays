@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[arr.length-1];
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family){
+  for(i = 0; i < 3; i++){
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters) {
+  for (i = letters.length - 1; i >= 0; i--) {
+     alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var numbers = [];
+  for (i = 0; i < nums.length; i++) {
+    let modul = nums[i] % 2;
+     if(modul == 0){
+       numbers.push(nums[i]);
+       //alert(nums[i]);
+     }
+ }
+ return numbers;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -94,8 +116,22 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
-
+function divider(numbersArray){
+  var evenNumbers = [],
+      oddNumbers = [],
+      arrayOfArrays = [];
+  for (i = 0; i < numbersArray.length; i++) {
+    let modul = numbersArray[i] % 2;
+     if(modul == 0){
+      evenNumbers.push(numbersArray[i]);
+     }else{
+      oddNumbers.push(numbersArray[i]);
+     }
+ }
+ even = [evenNumbers];
+ odd = [oddNumbers];
+ return [].concat(even).concat(odd);
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -105,8 +141,8 @@ var getRandomArbitrary = function() {
 };
 // Do not edit the code above.
 
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 /*
-  var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
   Write a function named finder that will take in an array as an argument.
@@ -116,7 +152,18 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+function finder(array){
+  var randomNumber = getRandomArbitrary();
+  //console.log(randomNumber);
+  for(i = 0; i < array.length; i++){
+    if(array[i] == randomNumber){
+      //console.log(randomNumber);
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -145,9 +192,35 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+var myGroceryList = [];
+function removeItem(myGroceryList, removeFromMyGroceryList){
+  if(removeFromMyGroceryList){
+    for(i = 0; i < myGroceryList.length; i++){
+      if(myGroceryList[i] == removeFromMyGroceryList){
+        myGroceryList.splice(i, 1); 
+      }
+    }
+    return myGroceryList;
+  }
+  else if(!removeFromMyGroceryList){
+    return [];
+  }
+}
+removeItem(myGroceryList, 'chips');
 
 
-
+function addItem(myGroceryList, addTomyGroceryList){
+  if(addTomyGroceryList){
+    if(myGroceryList.indexOf(addTomyGroceryList) == -1){
+      myGroceryList.push(addTomyGroceryList); 
+    }
+    return myGroceryList;
+  }  
+  else if(!addTomyGroceryList){
+    return [];
+  }
+}
+addItem(myGroceryList, 'pizza');
 ////////// PROBLEM 9 //////////
 
 /*
@@ -155,8 +228,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
-
+function maker(){
+  var numbers = [];
+  for(i = 1; i <= 215; i++){
+    numbers.push(i);
+  }
+  return numbers;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -172,6 +250,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 
+function addTen(numbers){
+  for(i = 0; i < numbers.length; i++){
+    numbers[i] = Number(numbers[i]) + 10;
+  }
+  return numbers;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -196,7 +280,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else{
+    return  arr2;
+  }
+}
 
 
 /*
@@ -209,7 +299,17 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function both(arr1, arr2){
+  var numbers = [];
+  for(i = 0; i < arr1.length; i++){
+    for(j = 0; j < arr2.length; j++){
+      if(arr1[i] == arr2[j]){
+        numbers.push(arr1[i]);
+      }
+    }
+  }
+  return numbers;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -248,6 +348,9 @@ var tom = {
 */
 
 //Code Here
+var employees = [].concat([joe]).concat([jim]).concat([ryan]).concat([tom]);
+//console.log(employees.length);
+employees.splice(1, 1);
 
 
 
@@ -257,7 +360,8 @@ var tom = {
 */
 
 //Code Here
-
+var employees = employees.filter(function(el) { return el.name != 'Jim'; }); 
+console.log(employees);
 
 
 ////////// PROBLEM 13 //////////
@@ -269,7 +373,7 @@ var tom = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -284,13 +388,24 @@ var user1 = {
     email: 'mark@boom.camp',
     password: 'hunter2',
     username: 'ihazcode'
-};
+}
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Vince Gerard F. Ludovice',
+  email: 'vince.ludovice@boom.camp',
+  password: 'password',
+  username: 'vinceludovice'
+},  user3 = {
+  name: 'Lance',
+  email: 'lance@boom.camp',
+  password: 'lanseu',
+  username: 'lance'
+};
+users = [].concat(user1).concat(user2).concat(user3);
 
-
-
+// console.log(users);
 /*
   Now you have a very common data structure.
   Twitter is a good use case.
@@ -302,8 +417,7 @@ var user1 = {
 */
 
 //Code Here
-
-
+var users = users.filter(function(el) { return el.email != 'mark@boom.camp'; }); 
 
 /*
   The activity we just did is very much how data works in 'the real world'.
