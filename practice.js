@@ -9,7 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var arr = [10,20,30];
+var arr = [10, 20, 30];
 // Do not edit the code above.
 
 /*
@@ -18,13 +18,14 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
-
-
+function first(arr) {
+  return arr[0];
+}
+first(arr);
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
-var arr = [40,50,60];
+var arr = [40, 50, 60];
 // Do not edit the code above.
 
 /*
@@ -33,13 +34,14 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
-
-
+function last(arr) {
+  return arr[2];
+}
+last(arr);
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
-var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
+var family = ["Aodhan", "Haley", "Finn", "Reid"];
 // Do not edit the code above.
 
 /*
@@ -48,13 +50,16 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
-
-
+function looper(family) {
+  for (let y = 0; y <= family.length - 1; y++) {
+    alert(family[y]);
+  }
+}
+looper(family);
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
-var letters = ['A', 'B', 'C', 'D', 'E'];
+var letters = ["A", "B", "C", "D", "E"];
 // Do not edit the code above.
 
 /*
@@ -63,13 +68,16 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
-
-
+function reversedLooper(letters) {
+  for (let x = letters.length - 1; x >= 0; x--) {
+    alert(letters[x]);
+  }
+}
+reversedLooper(letters);
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var nums = [1,2,3,6,22,98,45,23,22,12];
+var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 // Do not edit the code above.
 
 /*
@@ -78,13 +86,20 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
-
-
+function evenFinder(nums) {
+  var number = [];
+  for (let z = 0; z <= nums.length - 1; z++) {
+    if (nums[z] % 2 === 0) {
+      number.push(nums[z]);
+    }
+  }
+  return number;
+}
+evenFinder(nums);
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
+var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 // Do not edit the code above.
 
 /*
@@ -94,9 +109,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
-
-
+let numberGroup = [[], []];
+function divider(numbersArray) {
+  for (let number of numbersArray) {
+    if (number % 2 == 0) {
+      numberGroup[0].push(number);
+    } else {
+      numberGroup[1].push(number);
+    }
+  }
+  return numberGroup;
+}
 ////////// PROBLEM 7 //////////
 
 // Do not edit the code below.
@@ -116,13 +139,22 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
-
-
+function finder(array) {
+  let randomNumber = getRandomArbitrary();
+  let bool = true;
+  for (let a = 0; a <= array.length - 1; a++) {
+    if (array[a] == randomNumber) {
+      bool = true;
+    } else {
+      bool = false;
+    }
+  }
+  return bool;
+}
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
-var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+var myGroceryList = ["chips", "pizza", "hotpockets", "MtnDew", "corndogs"];
 // Do not edit the code above.
 
 /*
@@ -145,9 +177,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if (!item) {
+    return [];
+  }
+  for (let a = 0; a < myGroceryList.length; a++) {
+    if (myGroceryList[a] == item) {
+      myGroceryList.splice(a, 1);
+      return myGroceryList;
+    }
+  }
+  return myGroceryList;
+}
 
-
-
+function addItem(myGroceryList, item) {
+  if (!item) {
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 ////////// PROBLEM 9 //////////
 
 /*
@@ -155,13 +204,17 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
-
-
+function maker() {
+  let e = [];
+  for (let i = 1; i <= 215; i++) {
+    e.push(i);
+  }
+  return e;
+}
 ////////// PROBLEM 10 //////////
 
 // Do not edit the code below.
-var numbers = [5, '9', 16, 19, '25', '34', 48];
+var numbers = [5, "9", 16, 19, "25", "34", 48];
 // Do not edit the code above.
 
 /*
@@ -171,9 +224,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
+function addTen(numbers) {
+  let newArr = [];
+  for (let val of numbers) {
+    newArr.push(parseInt(val) + 10);
+  }
+  return newArr;
+}
 
-
-
+addTen(numbers);
 ////////// PROBLEM 11 //////////
 
 // Do not edit the code below.
@@ -181,10 +240,10 @@ var num1 = Math.floor(Math.random() * 30);
 var num2 = Math.floor(Math.random() * 30);
 var arr1 = [];
 var arr2 = [];
-for(var i = 0; i < num1; i++){
+for (var i = 0; i < num1; i++) {
   arr1.push(i);
 }
-for(var i = 0; i < num2; i++){
+for (var i = 0; i < num2; i++) {
   arr2.push(i);
 }
 // Do not edit the code above.
@@ -196,9 +255,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
-
-
+function longer(arr1, arr2) {
+  return arr1.length > arr2.length ? arr1 : arr2;
+}
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -208,36 +267,44 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
-
-
+function both(arr1, arr2) {
+  var newArray = [];
+  for (let q of arr1) {
+    for (let w of arr2) {
+      if (q === w) {
+        newArray.push(q);
+      }
+    }
+  }
+  return newArray;
+}
 ////////// PROBLEM 12 //////////
 
 // Do not edit the code below.
 var employees = [];
 
 var joe = {
-    name: 'Joe',
-    position: 'Instructor',
-    spiritAnimal: 'Honey Badger'
+  name: "Joe",
+  position: "Instructor",
+  spiritAnimal: "Honey Badger"
 };
 
 var jim = {
-    name: 'Jim',
-    position: 'CEO',
-    spiritAnimal: 'butterfly'
+  name: "Jim",
+  position: "CEO",
+  spiritAnimal: "butterfly"
 };
 
 var ryan = {
-    name: 'Ryan',
-    position: 'Marketing',
-    spiritAnimal: 'fox'
+  name: "Ryan",
+  position: "Marketing",
+  spiritAnimal: "fox"
 };
 
 var tom = {
-    name: 'Tom',
-    position: 'Sales',
-    spiritAnimal: 'horse'
+  name: "Tom",
+  position: "Sales",
+  spiritAnimal: "horse"
 };
 // Do not edit the code above.
 
@@ -248,20 +315,19 @@ var tom = {
 */
 
 //Code Here
-
-
-
+employees.push(joe, jim, ryan, tom);
 /*
   Now let's say Jim has to take a leave of absence.
   Loop through your employees until you find jim, then remove him from the array.
 */
 
 //Code Here
-
-
-
+for (i = 0; i < employees.length; i++) {
+  if (employees[i].name === "Jim") {
+    employees.splice(i, 1);
+  }
+}
 ////////// PROBLEM 13 //////////
-
 
 /*
   A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects) of data is to have an array full of objects.
@@ -269,9 +335,7 @@ var tom = {
 */
 
 //Code Here
-
-
-
+let users = [];
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
 
@@ -280,16 +344,34 @@ var tom = {
 
 // Do not edit the code below.
 var user1 = {
-    name: 'Mark Mouser',
-    email: 'mark@boom.camp',
-    password: 'hunter2',
-    username: 'ihazcode'
+  name: "Mark Mouser",
+  email: "mark@boom.camp",
+  password: "hunter2",
+  username: "ihazcode"
 };
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: "Rap",
+  email: "rap@boom.camp",
+  password: "password1",
+  username: "new1"
+};
 
+var user3 = {
+  name: "Raquion",
+  email: "karls316@boom.camp",
+  password: "password2",
+  username: "new2"
+};
 
+var user4 = {
+  name: "Rak",
+  email: "rak@boom.camp",
+  password: "password3",
+  username: "new3"
+};
 
 /*
   Now you have a very common data structure.
@@ -302,9 +384,12 @@ var user1 = {
 */
 
 //Code Here
-
-
-
+users.push(user1, user2, user3, user4);
+for (let i = 0; i < users.length; i++) {
+  if (users[i].email === "mark@boom.camp") {
+    users.splice(i, 1);
+  }
+}
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
