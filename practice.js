@@ -414,8 +414,8 @@ users = [
 //Code Here
 
 for(var delIndex=0;delIndex<users.length;delIndex++){
-  if(user[delIndex].email == 'mark@boom.camp'){
-    users.splice(user[delIndex].email,1);
+  if(users[delIndex].email == 'mark@boom.camp'){
+    users.splice(users[delIndex].email,1);
   }
 }
 
