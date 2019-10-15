@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr.shift();
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr.pop();
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 */
 
 //Code Here
-
+function looper(family){
+  for(var i =0; i < family.length; i++){
+      alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  var arr = [];
+  for(var i = 0; i < letters.length; i++){
+    arr[i] = letters[letters.length - i - 1];
+    alert(arr[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +92,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+var arr = [];
+function evenFinder(nums){
+  for(var i = 0; i < nums.length; i++){
+    if(nums[i] % 2 == 0){
+       arr.push(nums[i]); 
+    }
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -94,7 +116,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray){
+  var temp=[[],[]];
+  for (var i = 0; i < numbersArray.length; i++){
+    if (numbersArray[i] % 2 === 0){
+    temp[0].push(numbersArray[i]);
+    }
+    else{
+    temp[1].push(numbersArray[i])
+    }
+ }
+ return temp;
+ }
+ divider(numbersArray)
+ 
 
 
 ////////// PROBLEM 7 //////////
@@ -116,7 +151,18 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder (params){
+  var randomNumber = getRandomArbitrary();
 
+  if(params.includes(randomNumber)){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+finder(numbers)
 
 
 ////////// PROBLEM 8 //////////
@@ -145,7 +191,35 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  var nodata = [];
+  
+  if(item){
+    for(i=0; i < myGroceryList.length; i++){
+      if(myGroceryList[i] === item){
+        myGroceryList.splice(i, 1)
+        return myGroceryList;
+      }
+    }
+    return myGroceryList;
+  }else {
+    return nodata;
+  }
+  
 
+}
+
+function addItem(myGroceryList, item){
+  var nodata = [];
+  if(item){
+    myGroceryList.push(item)
+    return myGroceryList
+  }else{
+    return nodata;
+  }
+}
+removeItem(myGroceryList, 'chips')
+addItem(myGroceryList, 'Jerky')
 
 
 ////////// PROBLEM 9 //////////
@@ -156,6 +230,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
+function maker(){
+  var arr = [];
+  for(var i = 1; i < 216; i++){
+     arr.push(i);
+  }  
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -171,7 +252,19 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
 
 //Code Here
-
+function addTen(numbers) {
+  var newArr = []
+  for (var i in numbers) {
+    if (typeof numbers[i] == "string") {
+      var num = parseInt(numbers[i],10);
+      newArr.push(num+10);
+    }
+    if (typeof numbers[i] !== "string") {
+      newArr.push(numbers[i]+10);
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -196,7 +289,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1,arr2){
+  return arr1 && arr2;
+}
 
 
 /*
@@ -208,13 +303,24 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  var newarrr =[];
 
+  for (let i=0; i<arr1.length; i++){
+        for(let x=0; x<arr2.length; x++){
+            if(arr1[i] === arr2[x]){
+                newarrr.push(arr2[x]);
+            }
+        }
+  }
+  return newarrr;
+}
 
 
 ////////// PROBLEM 12 //////////
 
 // Do not edit the code below.
-var employees = [];
+var employees = ['joe','jim','ryan','tom'];
 
 var joe = {
     name: 'Joe',
@@ -248,7 +354,7 @@ var tom = {
 */
 
 //Code Here
-
+console.log(employees.length);
 
 
 /*
@@ -257,7 +363,13 @@ var tom = {
 */
 
 //Code Here
-
+for(var i = 0; i < employees.length; i++){
+  if(i < 2){
+    i++
+  }else{
+    employees.splice(1,1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -269,7 +381,7 @@ var tom = {
 */
 
 //Code Here
-
+var users = ['name','email','password','username'];
 
 
 /*
