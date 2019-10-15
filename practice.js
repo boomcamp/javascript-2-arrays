@@ -380,7 +380,7 @@ console.log(employees.length);
 
 //Code Here
 for(i=0; i <= employees.length; i++){
-  if(employees[i].name == 'Jim'){
+  if(employees[i] === jim){
     employees.splice(i,1);
   }
 }
@@ -416,7 +416,7 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+// Code Here
 user2 = {
   name: 'barbs',
   email: 'barbs@boom.capm',
