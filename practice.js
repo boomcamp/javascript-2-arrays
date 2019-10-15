@@ -350,7 +350,7 @@ console.log(employees.length);
 //Code Here
 
 for(let i=0;i<employees.length;i++){
-  if(employees[i].name==='Jim'){
+  if(employees[i]===jim){
     employees.splice(i,1);
   }
 }
