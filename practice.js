@@ -19,6 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -34,7 +37,9 @@ var arr = [40,50,60];
 
 //Code Here
 
-
+function last(arr){
+  return arr[2];
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -49,7 +54,11 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 //Code Here
 
-
+function looper(family){
+  for(val of family){
+    alert(val);
+  }
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -64,7 +73,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
-
+function reversedLooper(letters){
+  for(i=letters.length-1;i>=0;i--){
+    alert(letters[i]);
+  }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -79,7 +92,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 
-
+function evenFinder(nums){
+  let arr = [];
+  for(let i=0; i<nums.length;i++){
+    if(nums[i] % 2 === 0){
+      arr.push(nums[i]);
+    }
+  }
+  return arr;
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -95,7 +116,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
+function divider(numbersArray){
+  let asd = [[],[]];
 
+  for(let i=0; i<numbersArray.length;i++){
+    if(numbersArray[i] % 2 === 0){
+      asd[0].push(numbersArray[i]);
+    }else{
+      asd[1].push(numbersArray[i]);
+    }
+  }
+  return asd;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -116,8 +148,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
-
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+ function finder(numbers){
+  var randomNumber = getRandomArbitrary();
+  var checker = true;
+  for(let i=0; i<numbers.length; i++){
+    checker =  (numbers[i]== randomNumber ? true : false);
+  }
+  return checker;
+ }
 
 ////////// PROBLEM 8 //////////
 
@@ -146,7 +185,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+  function removeItem(myGroceryList,item){
+    var newMyGroceryList = [];
+    if(item){
+      for(let i=0;i<myGroceryList.length;i++){
+        if(myGroceryList[i] == item){
+          myGroceryList.splice(myGroceryList[i],1);
+          return myGroceryList;
+        }else{
+          return myGroceryList;
+        }
+      }
+    }else{
+      return newMyGroceryList;
+    }
+ }
+ function addItem(myGroceryList,item){
+    var newMyGroceryList = [];
+    if(item){
+      myGroceryList.push(item);
+      return myGroceryList;
+    }else{
+      return newMyGroceryList;
+    }
+ }
 
 ////////// PROBLEM 9 //////////
 
@@ -156,7 +218,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+function maker(){
+  let arrr = [];
+  for(let i=1;i<=215;i++){
+    arrr.push(i);   
+  }
+  return arrr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -172,7 +240,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 //Code Here
 
-
+function addTen(numbers){
+  let newarr = [];
+    for(let i=0; i<numbers.length; i++){
+      let x = parseInt(numbers[i]);
+      newarr.push(x + 10);
+    }
+    return newarr;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -197,7 +272,13 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function longer(arr1,arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else{
+  return arr2;
+  }
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -209,7 +290,16 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+function both(arr1, arr2) {
+  var matches = [];
 
+  for ( var i = 0; i < arr1.length; i++ ) {
+      for ( var e = 0; e < arr2.length; e++ ) {
+          if ( arr1[i] === arr2[e] ) matches.push( arr1[i] );
+      }
+  }
+  return matches;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -249,7 +339,8 @@ var tom = {
 
 //Code Here
 
-
+employees.push(joe,jim,ryan,tom);
+console.log(employees.length);
 
 /*
   Now let's say Jim has to take a leave of absence.
@@ -258,7 +349,11 @@ var tom = {
 
 //Code Here
 
-
+for(let i=0;i<employees.length;i++){
+  if(employees[i].name==='Jim'){
+    employees.splice(i,1);
+  }
+}
 
 ////////// PROBLEM 13 //////////
 
@@ -270,7 +365,7 @@ var tom = {
 
 //Code Here
 
-
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -289,7 +384,28 @@ var user1 = {
 
 //Code Here
 
+var user2 = {
+  name: 'Vincent Serra',
+  email: 'vince@gmail.com',
+  password: 'bins',
+  username: 'bins1'
+}
 
+var user3 = {
+  name: 'Zion Cam',
+  email: 'zio@gmail.com',
+  password: 'zio',
+  username: 'zio'
+}
+
+var user4 = {
+  name: 'Samuel Jack',
+  email: 'sam@gmail.com',
+  password: 'sam',
+  username: 'sam'
+}
+
+users.push(user1,user2,user3,user4);
 
 /*
   Now you have a very common data structure.
@@ -303,7 +419,11 @@ var user1 = {
 
 //Code Here
 
-
+for(let i=0;i<users.length;i++){
+  if(users[i].email==='mark@boom.camp'){
+    users.splice(i,1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
