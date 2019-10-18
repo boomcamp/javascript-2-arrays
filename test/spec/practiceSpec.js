@@ -56,18 +56,18 @@ describe('arraysPractice', function() {
     it('should exist', function() {
       expect(looper).toBeDefined();
     });
-    it('should call alert once for each item in the array', function() {
-      var alert = spyOn(window, 'alert');
+    it('should console log each item in the array', function() {
+      var consoleLog = spyOn(console, 'log');
       var arr = [1, 2, 3];
       looper(arr);
-      expect(alert.calls.count()).toBe(arr.length);
+      expect(consoleLog.calls.count()).toBe(arr.length);
     });
     it('should call the items in order from first to last', function() {
-      var alert = spyOn(window, 'alert');
+      var consoleLog = spyOn(console, 'log');
       var arr = [1, 2, 3];
       looper(arr);
       for (var i = 0; i < arr.length; i++) {
-        expect(alert.calls.argsFor(i)[0]).toBe(arr[i]);
+        expect(consoleLog.calls.argsFor(i)[0]).toBe(arr[i]);
       }
     });
   });
@@ -75,18 +75,18 @@ describe('arraysPractice', function() {
     it('should exist', function() {
       expect(reversedLooper).toBeDefined();
     });
-    it('should call alert once for each item in the array', function() {
-      var alert = spyOn(window, 'alert');
+    it('should console log each item in the array', function() {
+      var consoleLog = spyOn(console, 'log');
       var arr = [1, 2, 3];
       reversedLooper(arr);
-      expect(alert.calls.count()).toBe(arr.length);
+      expect(consoleLog.calls.count()).toBe(arr.length);
     });
     it('should call the items in order from last to first', function() {
-      var alert = spyOn(window, 'alert');
+      var consoleLog = spyOn(console, 'log');
       var arr = [1, 2, 3];
       reversedLooper(arr);
       for (var i = 0; i < arr.length; i++) {
-        expect(alert.calls.argsFor(i)[0]).toBe(arr[arr.length - 1 - i]);
+        expect(consoleLog.calls.argsFor(i)[0]).toBe(arr[arr.length - 1 - i]);
       }
     });
   });
@@ -134,12 +134,12 @@ describe('arraysPractice', function() {
       expect(finder([])).toEqual(jasmine.any(Boolean));
     });
     it('should return true if the random number is found in the array', function() {
-      var rand = spyOn(window, 'getRandomArbitrary').and.returnValue(3);
+      var rand = spyOn(console, 'getRandomArbitrary').and.returnValue(3);
       var arr = [1, 2, 3];
       expect(finder(arr)).toBe(true);
     });
     it('should return false if the random number is not found in the array', function() {
-      var rand = spyOn(window, 'getRandomArbitrary').and.returnValue(4);
+      var rand = spyOn(console, 'getRandomArbitrary').and.returnValue(4);
       var arr = [1, 2, 3];
       expect(finder(arr)).toBe(false);
     });

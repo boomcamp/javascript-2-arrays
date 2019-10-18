@@ -2,8 +2,9 @@
   Once you complete a problem, refresh ./SpecRunner.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
+  
+  IMPORTANT NOTE: use var for declaring variables
 */
 
 ////////// PROBLEM 1 //////////
@@ -17,10 +18,9 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-function first(arr) {
-  return arr[0]
-    }
-  first(arr)
+//Code Here
+
+
 
 ////////// PROBLEM 2 //////////
 
@@ -33,10 +33,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-function last(arr) {
-  return arr[2]
-    }
-  last(arr)
+//Code Here
+
+
 
 ////////// PROBLEM 3 //////////
 
@@ -46,16 +45,13 @@ var family = ['Aodhan', 'Haley', 'Finn', 'Reid'];
 
 /*
   Create a function named 'looper' that is given family as it's only argument.
-  Loop through the given array and alert every item in the array.
+  Loop through the given array and console log every item in the array.
 */
 
-function looper(family) {
-  for (var i = 0; i < family.length; i++) {
-    alert(family[i])
-  }
-  console.log(family)
-}
-looper(family)
+//Code Here
+
+
+
 
 ////////// PROBLEM 4 //////////
 
@@ -65,16 +61,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 /*
   Write a function called reversedLooper that is given letters as it's only argument.
-  Loop backwards, starting at the end of the letters array, alerting every item in the array.
+  Loop backwards, starting at the end of the letters array, console log every item in the array.
 */
 
-function reversedLooper(letters) {
-  for (var i = letters.length - 1; i >= 0; i--) {
-    alert(letters[i])
-      console.log(letters[i])
-  }
-} 
-  reversedLooper(letters)
+//Code Here
+
+
 
 ////////// PROBLEM 5 //////////
 
@@ -87,15 +79,9 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-function evenFinder(nums) {
-  for (var i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 !== 0){
-    delete nums[i];
-    }
-  }
-  return nums
-}
-  evenFinder(nums)
+//Code Here
+
+
 
 ////////// PROBLEM 6 //////////
 
@@ -109,18 +95,9 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-function divider(numbersArray) {
-	let evenNumsOddNums = [[],[]]
-	  for (var i = 0; i < numbersArray.length; i++) {
-	    if (numbersArray[i] % 2 === 0){
-	      evenNumsOddNums[0].push(numbersArray[i])
-    	} else {
-	      evenNumsOddNums[1].push(numbersArray[i])
-	}
-}
-return evenNumsOddNums; 
-}
-divider(numbersArray)
+//Code Here
+
+
 
 ////////// PROBLEM 7 //////////
 
@@ -152,16 +129,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list and adding new items to our list.
-
   Write a function called removeItem that is given two arguments, the first is myGroceryList, and the second is an item to remove from myGroceryList.
   If the second argument (or the item to add or remove) matches an item in myGroceryList, remove that item from the your grocery list and return the new, updated grocery list.
-
   Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList and the second is an item to add to your grocery list.
   In addItem add the item you passed in to myGroceryList then return the new, updated grocery list.
-
   In both removeItem and addItem check to see if the 'myGroceryList' and 'item' arguments are truthy.
   If they are not, return an empty array.
-
   Here are some examples of calling your functions and what should be returned:
   removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -169,12 +142,9 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-var removeItem = (myGroceryList, target) => {
-  if (myGroceryList.indexOf(target) >= 0) {
-    myGroceryList.splice(myGroceryList.indexOf(target), 1);
-    return myGroceryList;
-  }
-}
+//Code Here
+
+
 
 ////////// PROBLEM 9 //////////
 
@@ -182,14 +152,9 @@ var removeItem = (myGroceryList, target) => {
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-var maker = function() {
-	var newArr = [];
-	for(var i = 1; i < 215; i++) {
-		newArr.push(i);
-	}
-		return newArr;
-}
-maker()
+//Code Here
+
+
 
 ////////// PROBLEM 10 //////////
 
@@ -203,16 +168,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
 
-function addTen(arr) {
-  var numberfied = [];
-  for (var x = 0; x<arr.length; x++) {
-    numberfied.push(Number(arr[x]));
-    numberfied[x] += 10;
-  }
-  return numberfied;
-}
+//Code Here
 
-addTen(numbers);
+
 
 ////////// PROBLEM 11 //////////
 
@@ -243,7 +201,6 @@ for(var i = 0; i < num2; i++){
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
   'both' should return a new array with the matching numbers found in both arr1 and arr2.
-
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
@@ -298,6 +255,8 @@ var tom = {
 
 //Code Here
 
+
+
 ////////// PROBLEM 13 //////////
 
 
@@ -306,13 +265,12 @@ var tom = {
   Create an empty array called users.
 */
 
-var users = []; 
+//Code Here
 
 
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
-
   Include the following user1 object as one of the objects in your array.
 */
 
@@ -325,38 +283,20 @@ var user1 = {
 };
 // Do not edit the code above.
 
-var user2 = {
-  name: 'Bruno Sheeeran',
-  email: 'bruno.sheran@gmail.com',
-  password: 'pass1',
-  username: 'user1'
-};
+//Code Here
 
-var user3 = {
-  name: 'Melanie Lavigne',
-  email: 'mel.lavigne@gmail.com',
-  password: 'pass2',
-  username: 'user2'
-};
 
-var user4 = {
-  name: 'Crabby Patty',
-  email: 'crabby.patty@gmail.com',
-  password: 'pass3',
-  username: 'user3'
-};
 
 /*
   Now you have a very common data structure.
   Twitter is a good use case.
   It's easy to imagine that your followers list on Twitter is an array full of objects and those objects contain properties about the specific person you follow.
-
   Now let's say that Mark decided to delete his account.
   Loop through your array of objects until you find Mark's account (use his email, mark@boom.camp, to find him).
   Once you find the array index he's located in, delete him from the array.
 */
 
-
+//Code Here
 
 
 
